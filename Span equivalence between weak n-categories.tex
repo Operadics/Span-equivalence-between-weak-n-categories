@@ -1,0 +1,507 @@
+\documentclass{tac}
+
+% Prepared using tac.cls and diagxy (if you do not have diagxy, compiling this will require commenting lines 165-168)
+% PLEASE READ comments in the text below
+% PLEASE NOTE: source files for submission to TAC require a comment like the following
+%              giving style, packages used, TeX implementation
+% TAC style, 2 pp, Xy-pic ver 3.7, MikTeX version 3.1
+
+
+% NOTE: packages used should be the first part of the preamble
+
+\usepackage[all]{xy}
+% diagxy loads xy, so the line preceding is redundant
+
+\input diagxy
+
+\def\xypic{\hbox{\rm\Xy-pic}}
+
+% The TAC hyperref setup should be reloaded after other packages
+
+\usepackage[colorlinks=true]{hyperref}
+\hypersetup{allcolors=[rgb]{0.1,0.1,0.4}}
+
+% NOTE: TAC preamble macros come next...
+
+\author{Yuya Nishimura}
+
+% NOTE: that \thanks is outside the \author macro, unlike article style...
+
+\thanks{}
+
+\address{}
+
+
+\title {Span equivalence between weak $n$-categories}
+
+% NOTE: this is required...
+
+\copyrightyear{2015}
+
+% NOTE: the next three are optional in this style (but are required for TAC publication)
+
+\keywords{TAC, diagrams}
+\amsclass{00A00}
+
+% NOTE: that \CR here provides a vertical listing
+\eaddress{}
+
+
+% NOTE: author macros  BEGIN here
+%       (they are all actually used in the article!!)
+% *PLEASE* note the begin and end of author macros in the source file
+
+\def\xypic{\hbox{\rm\Xy-pic}}
+
+% examples of proclamation macros follow - these define environments like \begin{thm} ... \end{thm}
+% by default they are italic, but roman proclamations for remarks, examples are also available
+% with \newtheoremrm{}{}
+
+\newtheorem{thm}{Theorem}
+% note that \newtheorem{theorem}{Theorem} and several others are already in tac.sty
+\newtheorem{theorem}{Theorem} 
+\newtheorem{lem}{Lemma}
+
+% note rm This is useful for remarks and examples
+\newtheoremrm{rem}{Remark}
+
+%diagrams
+\newcommand{\pullbackmark}[2]{\save ;p+<.8pc,0pc>:(0,-1)::%
+(#1) *{\phantom{Z}} %
+;p+(#2)-(0,0) **@{-}%
+;p-(#1)+(0,0) *{\phantom{Z}} **@{-} \restore}
+
+% TAC has a \proof environment, with abbreviations following; note also \mathrmdef{} and \mathbfdef{}
+
+\let\pf\proof
+\let\epf\endproof
+\mathrmdef{Hom}
+\mathbfdef{Set}
+
+% author macros END here
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+
+\end{abstract}
+
+% NOTE: it is good practice to \label all headings (and proclamations) immediately
+
+%NOTE: more verbosely, the next line could use \begin{lem} ... \end{lem}
+
+%\lem \endlem
+%\pf 
+%\epf
+
+
+%\thm \endthm
+%\pf
+%\epf
+
+% NOTE: If you use \cite at the beginning of a theorem-like environment,
+% it must come immediately after the theorem and before any label.
+
+\section{Introduction}
+
+\section{Span equivalence}
+
+\definition
+Let $f:X \rightarrow Y$ be a map of $n$-globular sets.
+\begin{list}{$\bullet$}{}
+\item $f$:surjective on $k$-cells $ : \Leftrightarrow$ $f_k : X_k \rightarrow Y_k $ :surjective
+\item $f$:injective on $k$-cells $ : \Leftrightarrow$ $f_k : X_k \rightarrow Y_k $ :injective
+\item $f$:full on $k$-cells $ : \Leftrightarrow$ 
+$\left\{ \begin{array}{l} 
+\forall x, x' \in X_{k-1}, g \in {\bf Hom}_{Y}(f(x), f(x')), \\
+\exists h \in {\bf Hom}_{X}(x,x') \hspace{5pt} {\rm s.t.} \hspace{5pt} f(h)=g \\
+\end{array} \right.$
+\item $f$:faithful on $k$-cell $ : \Leftrightarrow$ 
+$\left\{ \begin{array}{l}{}
+\forall x,x' \in X_{k-1}, g,g' \in {\bf Hom}_{X}(f(x),f(x')), \\
+g \neq g' \Rightarrow f(g) \neq f(g')
+\end{array} \right.$
+\end{list}
+\enddefinition
+
+\definition
+Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are span equivalent if there exists a triple $\langle \psi , u, v \rangle$ such that $\psi : KZ \rightarrow Z$ is an $K$-algebra, $u: Z \rightarrow X$ and $v: Z \rightarrow Y$ are maps of $K$-algebras, surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$-cells.The triple $\langle \psi , u, v \rangle$ is referred to as an span equivalence of $K$-algebras.
+\enddefinition
+
+\proposition
+In the pullback diagram in $[ {\bf G}_{n}^{op}, {\bf Set}]$
+\[ \xymatrix{
+ P \pullbackmark{1,0}{0,1} \ar[r]^j \ar[d]_i & Y \ar[d]^g \\
+ X \ar[r]_f & S
+} \]
+\begin{list}{$\bullet$}{}
+\item $f$:surjective on $0$-cells$\Rightarrow$ $j$:surjective on $0$-cells
+\item $f$:full on $k$-cells $\Rightarrow$ $j$:full on $k$-cells
+\item $f$:faithful on $k$-cells $\Rightarrow$ $j$:faithful on $k$-cells
+\end{list}
+\endproposition
+
+\pf 
+
+\rem
+Let $K$ be a monad on $[ {\bf G}_{n}^{op}, {\bf Set}]$. Pullbacks in $K \mathchar`- {\bf Alg}$ are created by the forgetful functor $U: K \mathchar`- {\bf Alg} \rightarrow [ {\bf G}_{n}^{op}, {\bf Set}]$.
+\endrem
+
+\proposition
+Let
+\[ \xymatrix{
+ & \ar[ld] P \ar[rd] &  & & & \ar[ld] Q \ar[rd] & \\
+X & & Y &  & Y & & Z 
+} \]
+be span equivalences, then
+\[ \xymatrix{ 
+ & & \ar[ld] R \pullbackmark{-1,1}{1,1} \ar[rd] & & \\
+ & \ar[ld] P \ar[rd] &  & \ar[ld] Q \ar[rd] & \\
+X & & Y & & Z 
+} \]
+is span equivalence.
+\endproposition
+
+\pf
+
+\thm
+Span equivalence is equivalence relation on $K$-algebras.
+\endthm
+
+
+\section{Characterizing equivalence of categories via spans}
+
+\definition
+Let ${\cal A}$ and ${\cal B}$ be categories. We say that ${\cal A}$ and ${\cal B}$ are span equivalent if there exists a triple $\langle {\cal A}, u, v \rangle$ such that ${\cal C}$ is a category, $u: {\cal C} \rightarrow {\cal A}$ and $v: {\cal C} \rightarrow {\cal B}$ are functors, surjective on objects, full and faithful.
+\enddefinition
+
+\definition
+Let ${\cal A}$ and ${\cal B}$ be categories, let $\langle S:{\cal A}\rightarrow{\cal B}, T:{\cal B} \rightarrow {\cal A}, \eta :I_{{\cal A}} \rightarrow TS , \epsilon :ST \rightarrow I_{{\cal B}} \rangle$ be an adjoint equivalence between ${\cal A}$ and ${\cal B}$. We define a category, {\rm equivalence fusion} ${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$ , as follows:
+
+\begin{list}{$\bullet$}{}
+\item object-set
+\[ {\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )} := {\bf Ob}{\rm (}{\cal A}{\rm )} \bigsqcup {\bf Ob}{\rm (}{\cal B}{\rm )} \hspace{20pt}  {\rm (disjoint)} \]
+\item hom-set
+\[ {\bf Hom}{\rm (}x,y{\rm )} := \left\{ \begin{array}{ll}
+\{ \langle f,x,y \rangle \mid f \in {\cal A}{\rm (}x,y{\rm )} \} & {\rm (}x,y \in {\cal A}{\rm )} \\
+\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}x,y{\rm )} \} & {\rm (}x,y \in {\cal B}{\rm )} \\
+\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}Sx,y{\rm )} \} & {\rm (}x \in {\cal A}, y \in {\cal B}{\rm )} \\
+\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}x,Sy{\rm )} \} & {\rm (}x \in {\cal B}, y \in {\cal A}{\rm )} \\
+\end{array} \right. \]
+\item composition
+\[ \begin{array}{ll}
+\tilde{\circ} : {\bf Hom}{\rm (}y,z{\rm )} \times {\bf Hom}{\rm (}x,y{\rm )} & \longrightarrow {\bf Hom}{\rm (}x,z{\rm )} \\
+\hspace{50pt} \langle \langle g,y,z \rangle , \langle f,x,y \rangle \rangle & \longmapsto \langle g,y,z \rangle \tilde{\circ} \langle f,x,y \rangle := \langle g \circ f,x,z \rangle 
+\end{array} \]
+ \[ g \circ f := \left\{ \begin{array}{ll}
+ g \circ_{{\cal A}} f & {\rm (}x,y,z \in {\cal A}{\rm )} \\
+ g \circ_{{\cal B}} f & {\rm (}x,y,z \in {\cal B}{\rm )} \\
+ g \circ_{{\cal B}} Sf & {\rm (}x,y \in {\cal A}, z \in {\cal B}{\rm )} \\
+ g \circ_{{\cal B}} f & {\rm (}x \in {\cal A}, y,z \in {\cal B}{\rm )} \\
+ g \circ_{{\cal B}} f & {\rm (}x,y \in {\cal B}, z \in {\cal A}{\rm )} \\
+ Sg \circ_{{\cal B}} f & {\rm (}x \in {\cal B}, y,z \in {\cal A}{\rm )} \\
+ \eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x} & {\rm (}x \in {\cal A}, y \in {\cal B}, z \in {\cal A}{\rm )} \\
+ g \circ_{{\cal B}} f & {\rm (}x \in {\cal B}, y \in {\cal A}, z \in {\cal B}{\rm )} \\
+\end{array} \right. \]
+\item identities
+\[ {\rm id}_{x} :=\left\{ \begin{array}{ll}
+\langle {\rm id}_{x},x,x \rangle & {\rm (}x \in {\cal A}, {\rm id}_{x} \in {\cal A}{\rm (}x,x{\rm )} {\rm )} \\
+\langle {\rm id}_{x},x,x \rangle & {\rm (}x \in {\cal B}, {\rm id}_{x} \in {\cal B}{\rm (}x,x{\rm )} {\rm )} \\
+\end{array} \right. \]
+\end{list}
+\enddefinition
+
+
+\proposition
+The equivalence fusion ${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$ forms a category.
+\endproposition
+
+\pf
+It is easy to check that the composition $\tilde{\circ}$ is map from ${\bf Hom}(x,y) \times {\bf Hom}(y,z)$ to ${\bf Hom}(x,z)$. Now, we prove that the composition $\tilde{\circ}$ satisfies composition law and identity law by case analysis.
+\begin{itemize}
+
+\item composition law
+ \begin{itemize}
+ \item $x \in {\cal A}, y \in {\cal A}, z \in {\cal A}, w \in {\cal A}$, \\
+ $h \circ ( g \circ f ) = h \circ_{{\cal A}} ( g \circ_{{\cal A}} f ) $\\
+ $( h \circ g ) \circ f = ( h \circ_{{\cal A}} g ) \circ_{{\cal A}} f $
+ \item $x \in {\cal A}, y \in {\cal A}, z \in {\cal A}, w \in {\cal B}$, \\
+ $h \circ ( g \circ f ) = h \circ ( g \circ_{{\cal A}} f ) = h \circ_{{\cal B}} S(g \circ_{{\cal A}} f) = h \circ_{{\cal B}} ( Sg \circ_{{\cal B}} Sf )$\\
+ $( h \circ g ) \circ f = ( h \circ_{{\cal B}} Sg ) \circ f = ( h \circ_{{\cal B}} Sg ) \circ_{{\cal B}} Sf $
+ \item $x \in {\cal A}, y \in {\cal A}, z \in {\cal B}, w \in {\cal A}$, \\
+ $h \circ ( g \circ f ) = h \circ ( g \circ_{{\cal B}} Sf ) = \eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} T(g \circ_{{\cal B}} Sf) \circ_{{\cal A}} \eta_{x}  \\
+ \hspace{134pt} =\eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} Tg \circ_{{\cal A}} TSf \circ_{{\cal A}} \eta_{x} \\
+  \hspace{134pt} =\eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} Tg \circ_{{\cal A}} \eta_{y} \circ_{\cal A} f  \\
+ ( h \circ g ) \circ f = ( \eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} Tg \circ_{{\cal A}} \eta_{y} ) \circ f =( \eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} Tg \circ_{{\cal A}} \eta_{y} ) \circ_{{\cal A}} f $
+ \item $ x \in {\cal A}, y \in {\cal A}, z \in {\cal B}, w \in {\cal B}$, \\
+ $h \circ ( g \circ f ) = h \circ ( g \circ_{{\cal B}} Sf ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} Sf )$\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ f =  ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} Sf $
+ \item $x \in {\cal A}, y \in {\cal B}, z \in {\cal A}, w \in {\cal A}$, \\
+ $h \circ ( g \circ f ) = h \circ ( \eta_{z}^{-1} \circ_{{\cal A}} Tg  \circ_{{\cal A}}  Tf  \circ_{{\cal A}}  \eta_{x}) = h  \circ_{{\cal A}}   \eta_{z}^{-1}  \circ_{{\cal A}} Tg  \circ_{{\cal A}} Tf  \circ_{{\cal A}} \eta_{x} \\
+ \hspace{210pt} = \eta_{w}^{-1} \circ_{{\cal A}} TSh \circ_{{\cal A}} Tg  \circ_{{\cal A}} Tf  \circ_{{\cal A}} \eta_{x} $ \\
+$( h \circ g ) \circ f = ( Sh \circ_{{\cal B}} g ) \circ f = \eta_{w}^{-1} \circ_{{\cal A}} T(Sh \circ_{{\cal B}} g) \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x} \\
+\hspace{133pt} = \eta_{w}^{-1} \circ_{{\cal A}} TSh \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x}$
+ \item $x \in {\cal A}, y \in {\cal B}, z \in {\cal A}, w \in {\cal B}$, \\
+ $h \circ ( g \circ f ) = h \circ ( \eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x} )\\
+\hspace{52pt} = h \circ_{{\cal B}} S( \eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x} )\\
+\hspace{52pt} =  h \circ_{{\cal B}} S\eta_{z}^{-1} \circ_{{\cal B}} ST(g \circ_{{\cal B}} f) \circ_{{\cal B}} S\eta_{x} \\
+\hspace{52pt} = h \circ_{\cal B} (\epsilon_{Sz} \circ_{{\cal B}} S \eta_{z}) \circ_{{\cal B}}S \eta_{z}^{-1} \circ_{{\cal B}} ST(g \circ_{{\cal B}} f) \circ_{{\cal B}} S \eta_{x} \\
+\hspace{52pt} = h \circ_{\cal B} \epsilon_{Sz} \circ_{{\cal B}} ST(g \circ_{{\cal B}} f) \circ_{{\cal B}} S \eta_{x} \\
+\hspace{52pt} = h \circ_{\cal B} g \circ_{{\cal B}} f \circ_{{\cal B}} \epsilon_{Sx} \circ_{{\cal B}} S \eta_{x} \\
+\hspace{52pt} = h \circ_{\cal B} g \circ_{{\cal B}} f $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $
+ \item $ x \in {\cal A}, y \in {\cal B}, z \in {\cal B}, w \in {\cal A}$, \\
+ $h \circ ( g \circ f ) = h \circ ( g \circ_{{\cal B}} f ) = \eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} T(g \circ_{{\cal B}} f) \circ_{{\cal A}} \eta_{x}$\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ f = \eta_{w}^{-1} \circ_{{\cal A}} T(h \circ_{{\cal B}} g) \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x} $
+ \item $x \in {\cal A}, y \in {\cal B}, z \in {\cal B}, w \in {\cal B}$, \\
+$h \circ ( g \circ f ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} f ) $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $
+ \item $x \in {\cal B}, y \in {\cal A}, z \in {\cal A}, w \in {\cal A}$, \\
+$h \circ ( g \circ f ) = h \circ (Sg \circ_{{\cal B}} f) = Sh \circ_{{\cal B}} (Sg \circ_{{\cal B}} f)$\\
+$( h \circ g ) \circ f = (h \circ_{{\cal A}} g) \circ f = S(h \circ_{{\cal A}} g) \circ_{{\cal B}} f = (Sh \circ_{{\cal B}} Sg) \circ_{{\cal B}} f$
+ \item $x \in {\cal B}, y \in {\cal A}, z \in {\cal A}, w \in {\cal B}$, \\
+$h \circ ( g \circ f ) = h \circ (Sg \circ_{{\cal B}} f) = h \circ_{{\cal B}} (Sg \circ_{{\cal B}} f)$\\
+$( h \circ g ) \circ f = (h \circ_{{\cal B}} Sg) \circ f = (h \circ_{{\cal B}} Sg) \circ_{{\cal B}} f$
+ \item $x \in {\cal B}, y \in {\cal A}, z \in {\cal B}, w \in {\cal A}$, \\
+$h \circ ( g \circ f ) = h \circ (g \circ_{{\cal B}} f) = h \circ_{{\cal B}} (g \circ_{{\cal B}} f)$\\
+$( h \circ g ) \circ f = (\eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} Tg \circ_{{\cal A}} \eta_{y}) \circ f \\
+\hspace{52pt} = S (\eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} Tg \circ_{{\cal A}} \eta_{y}) \circ_{{\cal B}} f \\
+\hspace{52pt} = S\eta_{w}^{-1} \circ_{{\cal B}} ST(h \circ_{{\cal B}} g) \circ_{{\cal B}} S\eta_{y} \circ_{{\cal B}} f \\
+\hspace{52pt} = (\epsilon_{Sw} \circ_{{\cal B}} S \eta_{w}) \circ_{{\cal B}}S \eta_{w}^{-1} \circ_{{\cal B}} ST(h \circ_{{\cal B}} g) \circ_{{\cal B}} S \eta_{y} \circ_{\cal B} f \\
+\hspace{52pt} = \epsilon_{Sw} \circ_{{\cal B}} ST(h \circ_{{\cal B}} g) \circ_{{\cal B}} S \eta_{y} \circ_{\cal B} f \\
+\hspace{52pt} = h \circ_{{\cal B}} g \circ_{{\cal B}} \epsilon_{Sy} \circ_{{\cal B}} S \eta_{y} \circ_{\cal B} f \\
+\hspace{52pt} = h \circ_{{\cal B}} g \circ_{\cal B} f$
+ \item $x \in {\cal B}, y \in {\cal A}, z \in {\cal B}, w \in {\cal B}$, \\
+$h \circ ( g \circ f ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} f ) $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $
+ \item $x \in {\cal B}, y \in {\cal B}, z \in {\cal A}, w \in {\cal A}$, \\
+$h \circ ( g \circ f ) = h \circ (g \circ_{{\cal B}} f) = Sh \circ_{{\cal B}} (g \circ_{{\cal B}} f)$\\
+$( h \circ g ) \circ f = (Sh \circ_{{\cal B}} g) \circ f = (Sh \circ_{{\cal B}} g) \circ_{{\cal B}} f$
+ \item $x \in {\cal B}, y \in {\cal B}, z \in {\cal A}, w \in {\cal B}$, \\
+$h \circ ( g \circ f ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} f ) $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $
+ \item $x \in {\cal B}, y \in {\cal B}, z \in {\cal B}, w \in {\cal A}$, \\
+$h \circ ( g \circ f ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} f ) $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $
+ \item $x \in {\cal B}, y \in {\cal B}, z \in {\cal B}, w \in {\cal B}$, \\
+$h \circ ( g \circ f ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} f ) $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $
+ \end{itemize}
+ 
+\item identity law
+ \begin{itemize}
+ \item $ x \in {\cal A}, y \in {\cal A}$, \\
+$f \circ {\rm id}_{x} = f \circ_{{\cal A}} {\rm id}_{x} = f$\\
+${\rm id}_{y} \circ f = {\rm id}_{y} \circ_{{\cal A}} f = f$
+ \item $x \in {\cal A}, y \in {\cal B}$, \\
+$f \circ {\rm id}_{x} = f \circ_{{\cal B}} S{\rm id}_{x} = f \circ_{{\cal B}} {\rm id}_{Sx} = f$\\
+${\rm id}_{y} \circ f = {\rm id}_{y} \circ_{{\cal B}} f = f$
+ \item $ x \in {\cal B}, y \in {\cal A}$, \\
+$f \circ {\rm id}_{x} = f \circ_{{\cal B}} {\rm id}_{x} = f$\\
+${\rm id}_{y} \circ f = S{\rm id}_{y} \circ_{{\cal B}} f = {\rm id}_{Sy} \circ_{{\cal B}} f = f$
+ \item $x \in {\cal B}, y \in {\cal B}$, \\
+$f \circ {\rm id}_{x} = f \circ_{{\cal B}} {\rm id}_{x} = f$\\
+${\rm id}_{y} \circ f = {\rm id}_{y} \circ_{{\cal B}} f = f$
+ \end{itemize}
+
+\end{itemize}
+
+
+
+
+
+
+\definition
+Let $\langle S:{\cal A}\rightarrow{\cal B}, T:{\cal B} \rightarrow {\cal A},  \eta :I_{{\cal A}} \rightarrow TS , \epsilon :ST \rightarrow I_{{\cal B}} \rangle$ be an adjoint equivalence, let ${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$ be the equivalence fusion. We define the projections $u,v$ as follows:
+
+\begin{list}{$\bullet$}{}
+\item $u:{\cal A}\sqcup \hspace{-.76em} \mid {\cal B} \longrightarrow A$ \\
+ object-function 
+$ u:{\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )} \longrightarrow {\bf Ob}{\rm (}{\cal A}{\rm )} $ \\
+$ \hspace{141pt} x  \longmapsto ux := \left\{ \begin{array}{ll}
+x & {\rm (}x \in {\cal A}{\rm )} \\
+Tx & {\rm (}x \in {\cal B}{\rm )} \\
+\end{array} \right. $ \\
+ hom-functions $u:{\bf Hom}{\rm (}x,y{\rm )} \longrightarrow {\cal A}{\rm (}ux,uy{\rm )}$ \\
+\hspace{106pt} $\langle f,x,y \rangle \longmapsto uf := \left\{ \begin{array}{ll} 
+f & {\rm (}x,y \in {\cal A}{\rm )} \\
+Tf & {\rm (}x,y \in {\cal B}{\rm )} \\
+Tf \circ_{{\cal A}} \eta_{x} & {\rm (}x \in {\cal A}, y \in {\cal B}{\rm )} \\
+\eta_{y}^{-1} \circ_{{\cal A}} Tf & {\rm (}x \in {\cal B}, y \in {\cal A}{\rm )} \\
+\end{array} \right. $ \\
+
+\item $v:{\cal A}\sqcup \hspace{-.76em} \mid {\cal B} \longrightarrow B$ \\
+ object-function $v:{\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )} \longrightarrow {\bf Ob}{\rm (}{\cal B}{\rm )}$ \\
+\hspace{141pt} $x \longmapsto vx := \left\{ \begin{array}{ll}
+Sx & {\rm (}x \in {\cal A}{\rm )} \\
+x & {\rm (}x \in {\cal B}{\rm )} \\
+\end{array} \right. $ \\
+ hom-functions $v:{\bf Hom}{\rm (}x,y{\rm )} \longrightarrow {\cal B}{\rm (}ux,uy{\rm )}$Å@\\
+\hspace{106pt} $\langle f,x,y \rangle \longmapsto vf := \left\{ \begin{array}{ll}
+Sf & {\rm (}x,y \in {\cal A}{\rm )} \\
+f & {\rm ( others )} \\ 
+\end{array} \right.$ 
+\end{list}
+\enddefinition
+
+\proposition
+The projections $u,v$ are functors.
+\endproposition
+
+\pf We show that $u,v$ preserve composition of morphisms and identity morphism by case analysis.
+\begin{itemize}
+\item $u$ preserves composition of morphisms
+ \begin{itemize}
+ \item $x \in {\cal A}, y \in {\cal A}, z \in {\cal A}$, \\
+ $u(g \circ f) = u(g \circ_{{\cal A}} f) = g \circ_{{\cal A}} f$ \\
+$ug \circ_{{\cal A}} uf = g \circ_{{\cal A}} f$ 
+ \item $x \in {\cal A}, y \in {\cal A}, z \in {\cal B}$, \\
+ $u(g \circ f) = u(g \circ_{{\cal B}} Sf) = T(g \circ_{{\cal B}} Sf) \circ_{{\cal A}} \eta_{x}=Tg \circ_{{\cal A}} TSf \circ_{{\cal A}} \eta_{x}$ \\
+$ug \circ_{{\cal A}} uf =(Tg \circ_{{\cal A}} \eta_{y}) \circ_{{\cal A}} f = Tg \circ_{\cal A} TSf \circ_{{\cal A}} \eta_{x}$ 
+ \item $x \in {\cal A}, y \in {\cal B}, z \in {\cal A}$, \\
+ $u(g \circ f) =u(\eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x})=\eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x}$ \\
+$ug \circ_{{\cal A}} uf=(\eta_{z}^{-1} \circ_{{\cal A}} Tg) \circ_{{\cal A}} (Tf \circ_{{\cal A}} \eta_{x})$ 
+ \item $x \in {\cal A}, y \in {\cal B}, z \in {\cal B}$, \\
+ $u(g \circ f) = u(g \circ_{{\cal B}} f)=T(g \circ_{{\cal B}} f) \circ_{{\cal A}} \eta_{x}=Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x}$ \\
+$ug \circ_{{\cal A}} uf = Tg \circ_{{\cal A}} (Tf \circ_{{\cal A}} \eta_{x})$
+ \item $x \in {\cal B}, y \in {\cal A}, z \in {\cal A}$, \\
+$u(g \circ f) = u(Sg \circ_{{\cal B}} f) = \eta_{z}^{-1} \circ_{{\cal A}} T(Sg \circ_{{\cal B}} f) = \eta_{z}^{-1} \circ_{{\cal A}} TSg \circ_{{\cal B}} Tf$ \\
+$ug \circ_{{\cal A}} uf = g \circ_{{\cal A}} (\eta_{y}^{-1} \circ_{{\cal A}} Tf) = \eta_{z}^{-1} \circ_{{\cal A}} TSg \circ_{\cal A} Tf$
+ \item $ x \in {\cal B}, y \in {\cal A}, z \in {\cal B}$, \\
+ $u(g \circ f) = u(g \circ_{{\cal B}} f) = T(g \circ_{{\cal B}} f) = Tg \circ_{{\cal A}} Tf$ \\
+$ug \circ_{{\cal A}} uf = (Tg \circ_{{\cal A}} \eta_{y}) \circ_{{\cal A}} (\eta_{y}^{-1} \circ_{{\cal A}} Tf)= Tg \circ_{{\cal A}} Tf$
+ \item $ x \in {\cal B}, y \in {\cal B}, z \in {\cal A}$, \\
+$u(g \circ f) = u(g \circ_{{\cal B}} f) = \eta_{z}^{-1} \circ_{{\cal A}} T(g \circ_{{\cal B}} f) = \eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf$ \\
+$ug \circ_{{\cal A}} uf = (\eta_{z}^{-1} \circ_{{\cal A}} Tg) \circ_{{\cal A}} Tf$
+ \item $x \in {\cal B}, y \in {\cal B}, z \in {\cal B}$, \\
+ $u(g \circ f) = u( g \circ_{{\cal B}} f ) = T(g \circ_{{\cal B}} f)=Tg \circ_{{\cal A}} Tf$ \\
+$ug \circ_{{\cal A}} uf =Tg \circ_{{\cal A}} Tf$
+ \end{itemize}
+ 
+\item $u$ preserves identity morphisms
+ \begin{itemize}
+ \item $x \in {\cal A}$, \\
+$u({\rm id}_{x})={\rm id}_{x}={\rm id}_{ux}$
+ \item $x \in {\cal B}$, \\
+$u({\rm id}_{x})=T{\rm id}_{x}={\rm id}_{Tx}={\rm id}_{ux}$
+ \end{itemize}
+ 
+ \item $v$ preserves composition of morphisms
+ \begin{itemize}
+ \item $x \in {\cal A}, y \in {\cal A}, z \in {\cal A}$, \\
+$v(g \circ f) =v(g \circ_{{\cal A}} f)=S(g \circ_{{\cal A}} f) = Sg \circ_{{\cal B}} Sf$ \\
+$vg \circ_{{\cal B}} vf =Sg \circ_{{\cal A}} Sf$
+ \item $x \in {\cal A}, y \in {\cal A}, z \in {\cal B}$, \\
+$v(g \circ f) = v(g \circ_{{\cal B}} Sf) = g \circ_{{\cal B}} Sf$ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} Sf$
+ \item $ x \in {\cal A}, y \in {\cal B}, z \in {\cal A}$, \\
+$v(g \circ f) = v(\eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x}) \\
+\hspace{40pt} =S(\eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x}) \\
+\hspace{40pt} = S\eta_{z}^{-1} \circ_{{\cal B}} ST(g \circ_{{\cal B}} f) \circ_{{\cal B}} S\eta_{x} \\
+\hspace{40pt} = g \circ_{{\cal B}} f $ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} f$
+\item $ x \in {\cal A}, y \in {\cal B}, z \in {\cal B}$, \\
+$v(g \circ f) = v(g \circ_{{\cal B}} f) = g \circ_{{\cal B}} f$ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} f$
+\item $x \in {\cal B}, y \in {\cal A}, z \in {\cal A}$, \\
+$v(g \circ f) = v(Sg \circ_{{\cal B}} f) = Sg \circ_{{\cal B}} f$ \\
+$vg \circ_{{\cal B}} vf = Sg \circ_{{\cal B}} f$
+\item $x \in {\cal B}, y \in {\cal A}, z \in {\cal B}$, \\
+$v(g \circ f) = v(g \circ_{{\cal B}} f) = g \circ_{{\cal B}} f$ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} f$
+\item $x \in {\cal B}, y \in {\cal B}, z \in {\cal A}$, \\
+$v(g \circ f) = v(g \circ_{{\cal B}} f) = g \circ_{{\cal B}} f$ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} f$ 
+\item $ x \in {\cal B}, y \in {\cal B}, z \in {\cal B}$, \\
+$v(g \circ f) = v(g \circ_{{\cal B}} f) = g \circ_{{\cal B}} f$ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} f$
+ \end{itemize}
+ 
+\item $v$ preserves identity morphisms
+ \begin{itemize}
+ \item $ x \in {\cal A}$ \\
+$v({\rm id}_{x})=S{\rm id}_{x}={\rm id}_{Sx}={\rm id}_{vx}$
+ \item $x \in {\cal B}$ \\
+$v({\rm id}_{x})={\rm id}_{x}~{\rm id}_{vx}$
+ \end{itemize}
+ 
+\end{itemize}
+
+
+
+\proposition
+The projections $u,v$ are surjective on objects, full and faithful.
+\endproposition
+
+\pf It's trivial by definitions that $u,v$ are surjective on objects. So we check fullness and faithfulness.
+\begin{itemize}
+ \item $u$ is full and faithful
+ \begin{itemize}
+ \item $x,y \in {\cal A}$, \\
+ $u:{\bf Hom}(x,y)=\{ \langle f,x,y \rangle \mid f \in {\cal A}(x,y) \} \ni \langle f,x,y \rangle \mapsto f \in {\cal A}(x,y)$ is bijective.
+ \item $x,y \in {\cal B}$, \\
+ $T:{\cal B}{\rm (}x,y{\rm )} \rightarrow {\cal A}{\rm (}Tx,Ty{\rm )}$ is bijective. Therefore $u: {\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}(x,y) \} \ni \langle f,x,y \rangle \mapsto f \in {\cal A}(x,y) \ni \langle f,x,y \rangle \mapsto Tf \in {\cal A}{\rm (}Tx,Ty{\rm )}={\cal A}{\rm (}ux,uy{\rm )}$ is bijective.
+ \item $x \in {\cal A}, y \in {\cal B}$, \\
+${\cal B}{\rm (}Sx,y{\rm )} \ni f \mapsto Tf \circ_{{\cal A}} \eta_{x} \in {\cal A}{\rm (}x,Ty{\rm )} $ is the right adjunct of each $f$, and bijective. Therefore $u: {\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}(Sx,y) \} \ni \langle f,x,y \rangle \mapsto Tf \circ_{{\cal A}} \eta_{x} \in {\cal A}{\rm (}x,Ty{\rm )}={\cal A}{\rm (}ux,uy{\rm )}$ is bijective.
+ \item $x \in {\cal B} , y \in {\cal A}$, \\
+${\cal B}{\rm (}x,Sy{\rm )} \ni f \mapsto \eta_{y}^{-1} \circ_{{\cal A}} Tf \in {\cal A}{\rm (}Tx,y{\rm )}$ is the left adjunct of each $f$, and bijective. Therefore $u: {\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}(x,Sy) \} \ni \langle f,x,y \rangle \mapsto \eta_{y}^{-1} \circ_{{\cal A}} Tf \in {\cal A}{\rm (}Tx,y{\rm )}={\cal A}{\rm (}ux,uy{\rm )}$
+ \end{itemize}
+ 
+ \item $v$ is full and faithful
+ \begin{itemize}
+ \item $x,y \in {\cal A}$, \\
+$S:{\cal A}{\rm (}x,y{\rm )} \rightarrow {\cal B}{\rm (}Sx,Sy{\rm )}$ is bijective. Therefore $v:{\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal A}(x,y) \} \ni \langle f,x,y \rangle \mapsto Sf \in {\cal B}{\rm (}Sx,Sy{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$ is bijective.
+ \item $x,y \in {\cal B}$, \\
+$v:{\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}(x,y) \} \ni \langle f,x,y \rangle \mapsto f \in {\cal B}{\rm (}x,y{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$ is bijective.
+ \item $x \in {\cal A}, y \in {\cal B}$, \\
+$v:{\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}(Sx,y) \} \ni \langle f,x,y \rangle \mapsto f \in {\cal B}{\rm (}Sx,y{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$ is bijective.
+ \item $x \in {\cal B} , y \in {\cal A}$, \\
+$v:{\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}(x,Sy) \} \ni \langle f,x,y \rangle \mapsto f \in {\cal B}{\rm (}x,Sy{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$ is bijective.
+ \end{itemize}
+ 
+\end{itemize}
+
+
+\thm
+Let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is ordinary equivalent to ${\cal B}$ 
+if and only if ${\cal A}$ is span equivalent to ${\cal B}$. 
+\endthm
+
+\pf Let ${\cal A}$ be  ordinary equivalent to ${\cal B}$, then ${\cal A}$ is adjoint equivalent to ${\cal B}$. Thus there exists a adjoint equivalence between ${\cal A}$ and ${\cal B}$. So we can construct the equivalence fusion and the projections. By Propositions, they are span equivalence. Therefore ${\cal A}$ is span equivalent to ${\cal B}$. \\
+On the other hand, let ${\cal A}$ be span equivalent to ${\cal B}$. Then there exists a span equivalence $\langle {\cal C},u,v \rangle$ between ${\cal A}$ and ${\cal B}$, and ${\cal C}$ is ordinary equivalent to both ${\cal A}$ and ${\cal B}$. Therefore ${\cal A}$ is ordinary equivalent to ${\cal B}$.
+
+\rem
+Let ${\cal A}$ be presheaf category. The forgetful functor
+\[
+U: {\cal A} \mathchar`- {\bf Cat} \longrightarrow {\cal A} \mathchar`- {\bf Gph}
+\]
+is monadic.
+\endrem
+
+\proposition
+Let $F: {\bf Cat} \rightarrow {\bf Wk \mathchar`- 1 \mathchar`- Cat}$ be the isomorphism above. let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is span equivalent to ${\cal B}$ in ${\bf Cat}$ if and only if $F({\cal A})$ is span equivalent to $F({\cal B})$ in ${\bf Wk \mathchar`- 1 \mathchar`- Cat}$.
+\endproposition
+
+\pf
+
+\thm 
+Let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is ordinary equivalent to ${\cal B}$ 
+in ${\bf Cat}$ if and only if F$({\cal A})$ is span equivalent to F$({\cal B})$ in ${\bf Wk \mathchar`- 1 \mathchar`- Cat}$. 
+\endthm
+
+
+\newpage
+
+
+
+\refs
+
+\bibitem [Lamport, 1986]{LUG} L. Lamport, Latex User's Guide \&
+Reference Manual. Addison-Wesley (fifth edition), 1986.
+
+\endrefs
+
+
+
+\end{document}

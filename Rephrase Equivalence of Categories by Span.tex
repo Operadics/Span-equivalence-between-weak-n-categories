@@ -1,0 +1,384 @@
+\documentclass{msjproc}
+\usepackage{latexsym}
+\usepackage{amsmath,amsthm,amssymb} 
+
+\newcommand{\sq}{\qquad $\blacksquare$}
+\newcommand{\wsq}{\qquad $\square$}
+
+\begin{document}
+  \title{Characterizing Equivalence of Categories via Spans}
+  \author{Yuya Nishimura}{Kyoto Sangyo University}
+  \maketitle
+
+\begin{abstract}
+私の現在の研究テーマは、Leinsterの定義したweak n categoryに適切なequivalenceを与えることである。本稿は、そのテーマのために必要なweak 1 category（すなわち${\bf Cat}$）のequivalenceの言い換えを証明するものである。
+\end{abstract}
+
+
+  \section{Preliminary}
+  \vspace{2pt}
+
+  \subsection{Motivation}
+  \vspace{2pt}
+私の研究テーマは、Tom Leinster氏の定義したweak n categoryに``適切なequivalence''を与えることである。このテーマのモチベーションはThomas Cottrell氏の論文[1]の中で考えられているequivalenceにある。その論文の中では,
+equivalenceを次のように定義している。\vspace{2pt} \\
+{\sc Definition.} $K$を$n$-globular operadとし、
+\begin{eqnarray}
+KX \longrightarrow X , KY \longrightarrow Y  \nonumber
+\end{eqnarray}
+を$K$-algebrasとする。$K$-algebraの射$u:X \rightarrow Y$あるいは$u:Y \rightarrow X$で、$u$が0-cellにおいてsurjective、$m$-cell($1 \leq m \leq n$)においてfull、$n$-cellにおいてfaithfulであるようなものが存在するとき、$KX \rightarrow X$と$KY \rightarrow Y$はequivalentであるという。また、$u$を$K$-algebraのequivalenceという。\vspace{2pt} \\
+これは論文の中でも言われているようにmuch more strictな定義である。（後にいくつかのequivalenceを扱うため、このequivalenceをstrict equivalenceと呼ぶことにする）\\
+このstrict equivalenceは定義を見れば判るように対称性を持たず、大雑把に{\bf Cat}の場合を考えると\vspace{2pt} \\
+{\sc Interpretation.} ${\cal A},{\cal B} \in {\bf Cat}$とする。関手$u:{\cal A} \rightarrow {\cal B}$あるいは$u:{\cal B} \rightarrow {\cal A}$でsurjective on objectsかつfull and faithfulなものが存在するとき、strict equivalenceである。\vspace{2pt} \\
+ということになる。これは明らかに{\bf Cat}のequivalenceとは異なるものである。そこで、このstrict equivalenceを上手く修正し、{\bf Cat}においてequivalenceと一致するようなものを作れないか、という疑問が出てくる。ここではThomas Cottrell氏も触れているspanの形をしたequivalenceを考えることにしよう。すなわち、\vspace{2pt} \\
+{\sc Definition.}$K$を$n$-globular operadとし、
+\begin{eqnarray}
+KX \longrightarrow X , KY \longrightarrow Y  \nonumber
+\end{eqnarray}
+を$K$-algebrasとする。$K$-algebra $Z$と$K$-algebraの射$u: Z \rightarrow X$, $v: Z \rightarrow Y$の組で、$u,v$が0-cellにおいてsurjective、$m$-cell($1 \leq m \leq n$)においてfull、$n$-cellにおいてfaithfulであるようなものが存在するとき、$KX \rightarrow X$と$KY \rightarrow Y$はspan equivalentであるという。また、この３つ組$\langle Z,u,v \rangle$を$K$-algebraのspan equivalenceという。\vspace{2pt} \\
+この定義はstrict equivalenceには欠けていた対称性を持ち、{\bf Cat}の場合を考えると、\vspace{2pt} \\
+{\sc Interpretation.} ${\cal A},{\cal B} \in {\bf Cat}$とする。category {\cal C}と関手$u: {\cal C} \rightarrow {\cal A}$, $v: {\cal C} \rightarrow {\cal B}$の組で、$u,v$がsurjective on objectsかつfull and faithfulなものが存在するとき、span equivalenceである。\vspace{2pt} \\
+ということになる。本稿の目標は、{\bf Cat}において、このspan equivalenceと通常のequivalenceが一致することの証明である。そのために、Chapter2で随伴同値から${\cal C}$を具体的に構成し、Capter3で$u,v$を構成する。 \vspace{20pt} \\
+{\sc Terminology.} category ${\cal A}$について、${\bf Ob}({\cal A})$を${\cal A}$のobject-set、$x \in {\cal A}$を${\cal A}$のobject $x$とする。また、$x,y \in {\cal A}$について、hom-setを${\cal A}{\rm (}x,y{\rm )}$と書き、${\cal A}$のcompositionを$\circ_{{\cal A}}$と書くことにする。\vspace{20pt} \\
+
+  \section{Equivalent Preserve Union (EPU)}
+  \vspace{2pt}
+
+  \subsection{Definition of EPU}
+  {\sc Definition.}
+  ${\cal A,B} \in{\bf Cat}$とし, $\langle S:{\cal A}\rightarrow{\cal B}, T:{\cal B} \rightarrow {\cal A}, \eta :I_{{\cal A}} \rightarrow TS , \epsilon :ST \rightarrow I_{{\cal B}} \rangle$ を随伴同値とする。このとき、Equivalent Preserve Union ${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$を次のように定義する。
+\begin{list}{$\bullet$}{}
+\item object-set
+$ {\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )} := {\bf Ob}{\rm (}{\cal A}{\rm )} \bigsqcup {\bf Ob}{\rm (}{\cal B}{\rm )}$ \hspace{20pt} (disjoint union)
+\item hom-set \\
+${\bf Hom}{\rm (}x,y{\rm )} := \left\{ \begin{array}{ll}
+\{ \langle f,x,y \rangle \mid f \in {\cal A}{\rm (}x,y{\rm )} \} & {\rm (}x,y \in {\cal A}{\rm )} \\
+\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}x,y{\rm )} \} & {\rm (}x,y \in {\cal B}{\rm )} \\
+\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}Sx,y{\rm )} \} & {\rm (}x \in {\cal A}, y \in {\cal B}{\rm )} \\
+\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}x,Sy{\rm )} \} & {\rm (}x \in {\cal B}, y \in {\cal A}{\rm )} \\
+\end{array} \right. $
+\item composition \\
+$\circ : {\bf Hom}{\rm (}y,z{\rm )} \times {\bf Hom}{\rm (}x,y{\rm )} \longrightarrow {\bf Hom}{\rm (}x,z{\rm )}$ \\
+$\langle \langle g,y,z \rangle , \langle f,x,y \rangle \rangle \longmapsto \langle g,y,z \rangle \circ \langle f,x,y \rangle := \langle g \tilde{\circ} f,x,z \rangle \\
+ g \tilde{\circ} f := \left\{ \begin{array}{ll}
+ g \circ_{{\cal A}} f & {\rm (}x,y,z \in {\cal A}{\rm )} \\
+ g \circ_{{\cal B}} f & {\rm (}x,y,z \in {\cal B}{\rm )} \\
+ g \circ_{{\cal B}} Sf & {\rm (}x,y \in {\cal A}, z \in {\cal B}{\rm )} \\
+ g \circ_{{\cal B}} f & {\rm (}x \in {\cal A}, y,z \in {\cal B}{\rm )} \\
+ g \circ_{{\cal B}} f & {\rm (}x,y \in {\cal B}, z \in {\cal A}{\rm )} \\
+ Sg \circ_{{\cal B}} f & {\rm (}x \in {\cal B}, y,z \in {\cal A}{\rm )} \\
+ \eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x} & {\rm (}x \in {\cal A}, y \in {\cal B}, z \in {\cal A}{\rm )} \\
+ g \circ_{{\cal B}} f & {\rm (}x \in {\cal B}, y \in {\cal A}, z \in {\cal B}{\rm )} \\
+\end{array} \right. $
+\item identities \\
+${\rm id}_{x} :=\left\{ \begin{array}{ll}
+\langle {\rm id}_{x},x,x \rangle & {\rm (}x \in {\cal A}, {\rm id}_{x} \in {\cal A}{\rm (}x,x{\rm )} {\rm )} \\
+\langle {\rm id}_{x},x,x \rangle & {\rm (}x \in {\cal B}, {\rm id}_{x} \in {\cal B}{\rm (}x,x{\rm )} {\rm )} \\
+\end{array} \right. $
+\end{list}
+  {\sc Attention.} 本稿では煩雑さを避けるために$\langle f,x,y \rangle \in {\bf Hom}{\rm (}x,y{\rm )}$を$f \in {\bf Hom}{\rm (}x,y{\rm )}$と書き、compositionとhom-setを
+\begin{eqnarray}
+g \circ f =g \tilde{\circ} f, \hspace{20pt}
+{\bf Hom}{\rm (}x,y{\rm )}= \left\{ \begin{array}{ll}
+{\cal A}{\rm (}x,y{\rm )} & {\rm (}x,y \in {\cal A}{\rm )} \\
+{\cal B}{\rm (}x,y{\rm )} & {\rm (}x,y \in {\cal B}{\rm )} \\
+{\cal B}{\rm (}Sx,y{\rm )} & {\rm (}x \in {\cal A}, y \in {\cal B}{\rm )} \\
+{\cal B}{\rm (}x,Sy{\rm )} & {\rm (}x \in {\cal B}, y \in {\cal A}{\rm )} \\
+\end{array} \right.  \nonumber
+\end{eqnarray}
+とみなす。すなわち、ドメインとコドメインの情報を暗黙のものとして取り扱う。\\
+　\\
+{\sc Proposition 2.1.1.} ${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$はCategoryをなす。\vspace{10pt} \\
+{\sc Check 1.} compositionが正しく定義されていること\\
+$x,y,z \in {\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )}, f \in {\bf Hom}{\rm (}x,y{\rm )}, g \in {\bf Hom}{\rm (}y,z{\rm )}$とする。\\
+次の8通りをチェックすればよい。\\
+$\bullet \hspace{3pt} x,y,z \in {\cal A}$\\
+ $f \in {\cal A}{\rm (}x,y{\rm )}, g \in {\cal A}{\rm (}y,z{\rm )}$であり、$g \circ f = g \circ_{{\cal A}} f \in {\cal A}{\rm (}x,z{\rm )}={\bf Hom}{\rm (}x,z{\rm )}$なので正しい。\\
+$\bullet \hspace{3pt} x,y,z \in {\cal B}$\\
+ $f \in {\cal B}{\rm (}x,y{\rm )}, g \in {\cal B}{\rm (}y,z{\rm )}$であり、$g \circ f = g \circ_{{\cal B}} f \in {\cal B}{\rm (}x,z{\rm )}={\bf Hom}{\rm (}x,z{\rm )}$なので正しい。\\
+$\bullet \hspace{3pt} x,y \in {\cal A}, z \in {\cal B}$\\
+ $f \in {\cal A}{\rm (}x,y{\rm )}, g \in {\cal B}{\rm (}Sy,z{\rm )}$であり、$Sf \in {\cal B}{\rm (}Sx,Sy{\rm )}$であるから、$g \circ f = g \circ_{{\cal B}} Sf \in {\cal B}{\rm (}Sx,z{\rm )}={\bf Hom}{\rm (}x,z{\rm )}$なので正しい\\
+$\bullet \hspace{3pt} x \in {\cal A}, y,z \in {\cal B}$\\
+$f \in {\cal B}{\rm (}Sx,y{\rm )}, g \in {\cal B}{\rm (}y,z{\rm )}$であり$g \circ f = g \circ_{{\cal B}} f \in {\cal B}{\rm (}Sx,z{\rm )}={\bf Hom}{\rm (}x,z{\rm )}$なので正しい。\\
+$\bullet \hspace{3pt} x,y \in {\cal B}, z \in {\cal A}$\\
+$f \in {\cal B}{\rm (}x,y{\rm )}, g \in {\cal B}{\rm (}y,Sz{\rm )}$であり$g \circ f = g \circ_{{\cal B}} f \in {\cal B}{\rm (}x,Sz{\rm )}={\bf Hom}{\rm (}x,z{\rm )}$なので正しい。\\
+$\bullet \hspace{3pt} x \in {\cal B}, y,z \in {\cal A}$\\
+$f \in {\cal B}{\rm (}x,Sy{\rm )}, g \in {\cal A}{\rm (}y,z{\rm )}$であり、$Sg \in {\cal B}{\rm (}Sy,Sz{\rm )}$であるから、$g \circ f=Sg \circ_{{\cal B}} f \in {\cal B}{\rm (}x,Sz{\rm )}={\bf Hom}{\rm (}x,z{\rm )}$なので正しい。\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}, z \in {\cal A}$\\
+$f \in {\cal B}{\rm (}Sx,y{\rm )}, g \in {\cal B}{\rm (}y,Sz{\rm )}$であるから$Tf \in {\cal A}{\rm (}TSx,Ty{\rm )}, Tg \in {\cal A}{\rm (}Ty,TSz{\rm )}$、$\eta :I_{{\cal A}} \rightarrow TS$であるから$\eta_{x} \in {\cal A}{\rm (}x,TSx{\rm )}, \eta_{z}^{-1} \in {\cal A}{\rm (}TSz,z{\rm )}$。よって、$g \circ f =\eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x} \in {\cal A}{\rm (}x,z{\rm )}={\bf Hom}{\rm (}x,z{\rm )}$なので正しい。\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}, z \in {\cal B}$\\
+$f \in {\cal B}{\rm (}x,Sy{\rm )}, g \in {\cal B}{\rm (}Sy,z{\rm )}$であり$g \circ f = g \circ_{{\cal B}} f \in {\cal B}{\rm (}x,z{\rm )}={\bf Hom}{\rm (}x,z{\rm )}$なので正しい。\\
+よって、compositionは正しく定義されている。\vspace{10pt} \wsq \\
+{\sc Check 2.} 結合法則を満たしていること \\
+$x,y,z,w \in {\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )}, f \in {\bf Hom}{\rm (}x,y{\rm )}, g \in {\bf Hom}{\rm (}y,z{\rm )}, h \in {\bf Hom}{\rm (}z,w{\rm )}$とする。\\
+次の16通りをチェックすればよい。\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal A}, z \in {\cal A}, w \in {\cal A}$\\
+$h \circ ( g \circ f ) = h \circ_{{\cal A}} ( g \circ_{{\cal A}} f ) $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal A}} g ) \circ_{{\cal A}} f $\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal A}, z \in {\cal A}, w \in {\cal B}$\\
+$h \circ ( g \circ f ) = h \circ ( g \circ_{{\cal A}} f ) = h \circ_{{\cal B}} S(g \circ_{{\cal A}} f) = h \circ_{{\cal B}} ( Sg \circ_{{\cal B}} Sf )$\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} Sg ) \circ f = ( h \circ_{{\cal B}} Sg ) \circ_{{\cal B}} Sf $\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal A}, z \in {\cal B}, w \in {\cal A}$\\
+$h \circ ( g \circ f ) = h \circ ( g \circ_{{\cal B}} Sf ) = \eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} T(g \circ_{{\cal B}} Sf) \circ_{{\cal A}} \eta_{x} \\
+\hspace{134pt} =\eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} Tg \circ_{{\cal A}} TSf \circ_{{\cal A}} \eta_{x}$\\
+$( h \circ g ) \circ f = ( \eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} Tg \circ_{{\cal A}} \eta_{y} ) \circ f =( \eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} Tg \circ_{{\cal A}} \eta_{y} ) \circ_{{\cal A}} f $\\
+$\eta : I_{{\cal A}} \rightarrow TS$は自然変換なので$TSf \circ_{{\cal A}} \eta_{x} = \eta_{y} \circ_{{\cal A}} f$. よって、$h \circ ( g \circ f ) = ( h \circ g ) \circ f$. \\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal A}, z \in {\cal B}, w \in {\cal B}$\\
+$h \circ ( g \circ f ) = h \circ ( g \circ_{{\cal B}} Sf ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} Sf )$\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ f =  ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} Sf $\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}, z \in {\cal A}, w \in {\cal A}$\\
+$h \circ ( g \circ f ) = h \circ ( \eta_{z}^{-1} \circ_{{\cal A}} Tg  \circ_{{\cal A}}  Tf  \circ_{{\cal A}}  \eta_{x}) = h  \circ_{{\cal A}}  ( \eta_{z}^{-1}  \circ_{{\cal A}} Tg  \circ_{{\cal A}} Tf  \circ_{{\cal A}} \eta_{x})$\\
+$( h \circ g ) \circ f = ( Sh \circ_{{\cal B}} g ) \circ f = \eta_{w}^{-1} \circ_{{\cal A}} T(Sh \circ_{{\cal B}} g) \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x} \\
+\hspace{133pt} = \eta_{w}^{-1} \circ_{{\cal A}} TSh \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x}$\\
+$\eta^{-1}:TS \rightarrow I_{{\cal A}}$は自然変換なので$h \circ_{{\cal A}} \eta_{z}^{-1}=\eta_{w}^{-1} \circ_{{\cal A}} TSh$. よって、$h \circ ( g \circ f ) = ( h \circ g ) \circ f$. \\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}, z \in {\cal A}, w \in {\cal B}$\\
+$h \circ ( g \circ f ) = h \circ ( \eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x} )\\
+\hspace{52pt} = h \circ_{{\cal B}} S( \eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x} )\\
+\hspace{52pt} =  h \circ_{{\cal B}} S\eta_{z}^{-1} \circ_{{\cal B}} ST(g \circ_{{\cal B}} f) \circ_{{\cal B}} S\eta_{x}$ \\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $\\
+随伴$\langle S:{\cal A}\rightarrow{\cal B}, T:{\cal B} \rightarrow {\cal A}, \eta :I_{{\cal A}} \rightarrow TS , \epsilon :ST \rightarrow I_{{\cal B}} \rangle$より$\epsilon S \circ_{{\cal B}} S \eta={\rm id}$であり、$\epsilon S:S \rightarrow STS$は自然変換なので$\epsilon_{Sz} \circ_{{\cal B}} ST(g \circ_{{\cal B}} f)=g \circ_{{\cal B}} f \circ_{{\cal B}} \epsilon_{Sx}$であるから\\
+$S\eta_{z}^{-1} \circ_{{\cal B}} ST(g \circ_{{\cal B}} f) \circ_{{\cal B}} \eta_{x} = (\epsilon_{Sz} \circ_{{\cal B}} S \eta_{z}) \circ_{{\cal B}}S \eta_{z}^{-1} \circ_{{\cal B}} ST(g \circ_{{\cal B}} f) \circ_{{\cal B}} \eta_{x} \\
+\hspace{128pt} = \epsilon_{Sz} \circ_{{\cal B}} ST(g \circ_{{\cal B}} f) \circ_{{\cal B}} \eta_{x} \\
+\hspace{128pt} = g \circ_{{\cal B}} f \circ_{{\cal B}} \epsilon_{Sx} \circ_{{\cal B}} S \eta_{x} \\
+\hspace{128pt} = g \circ_{{\cal B}} f $\\
+よって、$h \circ ( g \circ f ) = ( h \circ g ) \circ f$であることが言える。 \\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}, z \in {\cal B}, w \in {\cal A}$\\
+$h \circ ( g \circ f ) = h \circ ( g \circ_{{\cal B}} f ) = \eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} T(g \circ_{{\cal B}} f) \circ_{{\cal A}} \eta_{x}$\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ f = \eta_{w}^{-1} \circ_{{\cal A}} T(h \circ_{{\cal B}} g) \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x} $\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}, z \in {\cal B}, w \in {\cal B}$\\
+$h \circ ( g \circ f ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} f ) $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}, z \in {\cal A}, w \in {\cal A}$\\
+$h \circ ( g \circ f ) = h \circ (Sg \circ_{{\cal B}} f) = Sh \circ_{{\cal B}} (Sg \circ_{{\cal B}} f)$\\
+$( h \circ g ) \circ f = (h \circ_{{\cal A}} g) \circ f = S(h \circ_{{\cal A}} g) \circ_{{\cal B}} f = (Sh \circ_{{\cal B}} Sg) \circ_{{\cal B}} f$\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}, z \in {\cal A}, w \in {\cal B}$\\
+$h \circ ( g \circ f ) = h \circ (Sg \circ_{{\cal B}} f) = h \circ_{{\cal B}} (Sg \circ_{{\cal B}} f)$\\
+$( h \circ g ) \circ f = (h \circ_{{\cal B}} Sg) \circ f = (h \circ_{{\cal B}} Sg) \circ_{{\cal B}} f$\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}, z \in {\cal B}, w \in {\cal A}$\\
+$h \circ ( g \circ f ) = h \circ (g \circ_{{\cal B}} f) = h \circ_{{\cal B}} (g \circ_{{\cal B}} f)$\\
+$( h \circ g ) \circ f = (\eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} Tg \circ_{{\cal A}} \eta_{y}) \circ f \\
+\hspace{52pt} = S (\eta_{w}^{-1} \circ_{{\cal A}} Th \circ_{{\cal A}} Tg \circ_{{\cal A}} \eta_{y}) \circ_{{\cal B}} f \\
+\hspace{52pt} = S\eta_{w}^{-1} \circ_{{\cal B}} ST(h \circ_{{\cal B}} g) \circ_{{\cal B}} S\eta_{y} \circ_{{\cal B}} f$\\
+随伴$\langle S:{\cal A}\rightarrow{\cal B}, T:{\cal B} \rightarrow {\cal A}, \eta :I_{{\cal A}} \rightarrow TS , \epsilon :ST \rightarrow I_{{\cal B}} \rangle$より$\epsilon S \circ_{{\cal B}} S \eta={\rm id}$であり、$\epsilon S:S \rightarrow STS$は自然変換なので$\epsilon_{Sw} \circ_{{\cal B}} ST(h \circ_{{\cal B}} g)=h \circ_{{\cal B}} g \circ_{{\cal B}} \epsilon_{Sy}$であるから\\
+$S\eta_{w}^{-1} \circ_{{\cal B}} ST(h \circ_{{\cal B}} g) \circ_{{\cal B}} \eta_{y} = (\epsilon_{Sw} \circ_{{\cal B}} S \eta_{w}) \circ_{{\cal B}}S \eta_{w}^{-1} \circ_{{\cal B}} ST(h \circ_{{\cal B}} g) \circ_{{\cal B}} \eta_{y} \\
+\hspace{128pt} = \epsilon_{Sw} \circ_{{\cal B}} ST(h \circ_{{\cal B}} g) \circ_{{\cal B}} \eta_{y} \\
+\hspace{128pt} = h \circ_{{\cal B}} g \circ_{{\cal B}} \epsilon_{Sy} \circ_{{\cal B}} S \eta_{y} \\
+\hspace{128pt} = h \circ_{{\cal B}} g $\\
+よって、$h \circ ( g \circ f ) = ( h \circ g ) \circ f$であることが言える。 \\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}, z \in {\cal B}, w \in {\cal B}$\\
+$h \circ ( g \circ f ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} f ) $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal B}, z \in {\cal A}, w \in {\cal A}$\\
+$h \circ ( g \circ f ) = h \circ (g \circ_{{\cal B}} f) = Sh \circ_{{\cal B}} (g \circ_{{\cal B}} f)$\\
+$( h \circ g ) \circ f = (Sh \circ_{{\cal B}} g) \circ f = (Sh \circ_{{\cal B}} g) \circ_{{\cal B}} f$\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal B}, z \in {\cal A}, w \in {\cal B}$\\
+$h \circ ( g \circ f ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} f ) $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal B}, z \in {\cal B}, w \in {\cal A}$\\
+$h \circ ( g \circ f ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} f ) $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal B}, z \in {\cal B}, w \in {\cal B}$\\
+$h \circ ( g \circ f ) = h \circ_{{\cal B}} ( g \circ_{{\cal B}} f ) $\\
+$( h \circ g ) \circ f = ( h \circ_{{\cal B}} g ) \circ_{{\cal B}} f $\\
+よって、結合法則を満たしている。 \vspace{10pt} \wsq \\
+{\sc Check 3.} 単位法則を満たしていること \\
+$x,y \in {\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )}, f \in {\bf Hom}{\rm (}x,y{\rm )}$とする。次の4通りをチェックすればよい。\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal A}$\\
+$f \circ {\rm id}_{x} = f \circ_{{\cal A}} {\rm id}_{x} = f$\\
+${\rm id}_{y} \circ f = {\rm id}_{y} \circ_{{\cal A}} f = f$\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}$\\
+$f \circ {\rm id}_{x} = f \circ_{{\cal B}} S{\rm id}_{x} = f \circ_{{\cal B}} {\rm id}_{Sx} = f$\\
+${\rm id}_{y} \circ f = {\rm id}_{y} \circ_{{\cal B}} f = f$\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}$\\
+$f \circ {\rm id}_{x} = f \circ_{{\cal B}} {\rm id}_{x} = f$\\
+${\rm id}_{y} \circ f = S{\rm id}_{y} \circ_{{\cal B}} f = {\rm id}_{Sy} \circ_{{\cal B}} f = f$\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal B}$\\
+$f \circ {\rm id}_{x} = f \circ_{{\cal B}} {\rm id}_{x} = f$\\
+${\rm id}_{y} \circ f = {\rm id}_{y} \circ_{{\cal B}} f = f$\\
+よって、単位法則を満たしている。 \vspace{10pt} \wsq \\
+{\sc Check1-3}によって、${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$はCategoryをなすことがわかる。 \sq \\
+
+\newpage
+  \section{Characterizing Equivalence of Categories via Spans}
+  \vspace{2pt}
+  \subsection{Projection of EPU}
+{\sc Definition.}
+$\langle S:{\cal A}\rightarrow{\cal B}, T:{\cal B} \rightarrow {\cal A},  \eta :I_{{\cal A}} \rightarrow TS , \epsilon :ST \rightarrow I_{{\cal B}} \rangle$を随伴同値とし、${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$をEPUとする。このとき、Projection $u,v$を次のように定義する。
+\begin{list}{$\bullet$}{}
+\item $u:{\cal A}\sqcup \hspace{-.76em} \mid {\cal B} \longrightarrow A$ \\
+ object-function $u:{\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )} \longrightarrow {\bf Ob}{\rm (}{\cal A}{\rm )}$ \\
+\hspace{141pt} $x \longmapsto ux := \left\{ \begin{array}{ll}
+x & {\rm (}x \in {\cal A}{\rm )} \\
+Tx & {\rm (}x \in {\cal B}{\rm )} \\
+\end{array} \right.$ \\
+ hom-functions $u:{\bf Hom}{\rm (}x,y{\rm )} \longrightarrow {\cal A}{\rm (}ux,uy{\rm )}$ \\
+\hspace{106pt} $\langle f,x,y \rangle \longmapsto uf := \left\{ \begin{array}{ll} 
+f & {\rm (}x,y \in {\cal A}{\rm )} \\
+Tf & {\rm (}x,y \in {\cal B}{\rm )} \\
+Tf \circ_{{\cal A}} \eta_{x} & {\rm (}x \in {\cal A}, y \in {\cal B}{\rm )} \\
+\eta_{y}^{-1} \circ_{{\cal A}} Tf & {\rm (}x \in {\cal B}, y \in {\cal A}{\rm )} \\
+\end{array} \right. $ \\
+
+\item $v:{\cal A}\sqcup \hspace{-.76em} \mid {\cal B} \longrightarrow B$ \\
+ object-function $v:{\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )} \longrightarrow {\bf Ob}{\rm (}{\cal B}{\rm )}$ \\
+\hspace{141pt} $x \longmapsto vx := \left\{ \begin{array}{ll}
+Sx & {\rm (}x \in {\cal A}{\rm )} \\
+x & {\rm (}x \in {\cal B}{\rm )} \\
+\end{array} \right. $ \\
+ hom-functions $v:{\bf Hom}{\rm (}x,y{\rm )} \longrightarrow {\cal B}{\rm (}ux,uy{\rm )}$　\\
+\hspace{106pt} $\langle f,x,y \rangle \longmapsto vf := \left\{ \begin{array}{ll}
+Sf & {\rm (}x,y \in {\cal A}{\rm )} \\
+f & {\rm ( others )} \\ 
+\end{array} \right.$ 
+\end{list}
+{\sc Proposition 3.1.1.} $u$はfunctorである。\vspace{10pt} \\
+{\sc Check 4.} $u$のhom-functionsが正しく定義されていること\\
+$x,y \in {\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )}, f \in {\bf Hom}{\rm (}x,y{\rm )}$とする。次の4通りをチェックすればよい。\\
+$\bullet \hspace{3pt} x,y \in {\cal A}$ \\
+$f \in {\cal A}{\rm (}x,y{\rm )}$なので、$uf=f \in {\cal A}{\rm (}x,y{\rm )}={\cal A}{\rm (}ux,uy{\rm )}$ \\
+$\bullet \hspace{3pt} x,y \in {\cal B}$ \\
+$f \in {\cal B}{\rm (}x,y{\rm )}$なので、$uf=Tf \in {\cal A}{\rm (}Tx,Ty{\rm )}={\cal A}{\rm (}ux,uy{\rm )}$ \\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}$ \\
+$f \in {\cal B}{\rm (}Sx,y{\rm )}$であるから$Tf \in {\cal A}{\rm (}TSx,Ty{\rm )}$であり、$\eta_{x} \in {\cal A}{\rm (}x,TSx{\rm )}$なので、$uf=Tf \circ_{{\cal A}} \eta_{x} \in {\cal A}{\rm (}x,Ty{\rm )}={\cal A}{\rm (}ux,uy{\rm )}$ \\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}$ \\
+$f \in {\cal B}{\rm (}x,Sy{\rm )}$であるから$Tf \in {\cal A}{\rm (}Tx,TSy{\rm )}$であり、$\eta_{y}^{-1} \in {\cal A}{\rm (}TSy,y{\rm )}$なので、$uf=\eta_{y}^{-1} \circ_{{\cal A}} Tf \in {\cal A}{\rm (}Tx,y{\rm )}={\cal A}{\rm (}ux,uy{\rm )}$ \\
+よって、hom-functionsは正しく定義されている。\vspace{10pt} \wsq \\
+{\sc Check 5.} $u$がcompositionを保存していること\\
+$x,y,z \in {\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )}, f \in {\bf Hom}{\rm (}x,y{\rm )}, g \in {\bf Hom}{\rm (}y,z{\rm )}$とする。\\
+次の8通りをチェックすればよい。\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal A}, z \in {\cal A}$ \\
+$u(g \circ f) = u(g \circ_{{\cal A}} f) = g \circ_{{\cal A}} f$ \\
+$ug \circ_{{\cal A}} uf = g \circ_{{\cal A}} f$ \\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal A}, z \in {\cal B}$ \\
+$u(g \circ f) = u(g \circ_{{\cal B}} Sf) = T(g \circ_{{\cal B}} Sf) \circ_{{\cal A}} \eta_{x}=Tg \circ_{{\cal A}} TSf \circ_{{\cal A}} \eta_{x}$ \\
+$ug \circ_{{\cal A}} uf =(Tg \circ_{{\cal A}} \eta_{y}) \circ_{{\cal A}} f$ \\
+$\eta:I_{{\cal A}} \rightarrow TS$は自然変換だから$TSf \circ_{{\cal A}} \eta_{x}=\eta_{y} \circ_{{\cal A}} f$. よって、$u(g \circ f)=ug \circ_{{\cal A}} uf$
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}, z \in {\cal A}$ \\
+$u(g \circ f) =u(\eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x})=\eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x}$ \\
+$ug \circ_{{\cal A}} uf=(\eta_{z}^{-1} \circ_{{\cal A}} Tg) \circ_{{\cal A}} (Tf \circ_{{\cal A}} \eta_{x})$ \\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}, z \in {\cal B}$ \\
+$u(g \circ f) = u(g \circ_{{\cal B}} f)=T(g \circ_{{\cal B}} f) \circ_{{\cal A}} \eta_{x}=Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x}$ \\
+$ug \circ_{{\cal A}} uf = Tg \circ_{{\cal A}} (Tf \circ_{{\cal A}} \eta_{x})$ \\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}, z \in {\cal A}$ \\
+$u(g \circ f) = u(Sg \circ_{{\cal B}} f) = \eta_{z}^{-1} \circ_{{\cal A}} T(Sg \circ_{{\cal B}} f) = \eta_{z}^{-1} \circ_{{\cal A}} TSg \circ_{{\cal B}} Tf$ \\
+$ug \circ_{{\cal A}} uf = g \circ_{{\cal A}} (\eta_{y}^{-1} \circ_{{\cal A}} Tf)$ \\
+$\eta^{-1}:TS \rightarrow I_{{\cal A}}$は自然変換だから$\eta_{z}^{-1} \circ_{{\cal A}} TSg = g \circ_{{\cal A}} \eta_{y}^{-1}$. よって、$u(g \circ f)=ug \circ_{{\cal A}} uf$ \\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}, z \in {\cal B}$ \\
+$u(g \circ f) = u(g \circ_{{\cal B}} f) = T(g \circ_{{\cal B}} f) = Tg \circ_{{\cal A}} Tf$ \\
+$ug \circ_{{\cal A}} uf = (Tg \circ_{{\cal A}} \eta_{y}) \circ_{{\cal A}} (\eta_{y}^{-1} \circ_{{\cal A}} Tf)= Tg \circ_{{\cal A}} Tf$ \\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal B}, z \in {\cal A}$ \\
+$u(g \circ f) = u(g \circ_{{\cal B}} f) = \eta_{z}^{-1} \circ_{{\cal A}} T(g \circ_{{\cal B}} f) = \eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf$ \\
+$ug \circ_{{\cal A}} uf = (\eta_{z}^{-1} \circ_{{\cal A}} Tg) \circ_{{\cal A}} Tf$ \\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal B}, z \in {\cal B}$ \\
+$u(g \circ f) = u( g \circ_{{\cal B}} f ) = T(g \circ_{{\cal B}} f)=Tg \circ_{{\cal A}} Tf$ \\
+$ug \circ_{{\cal A}} uf =Tg \circ_{{\cal A}} Tf$ \\
+よって、$u$はcompositionを保存している。\vspace{10pt} \wsq \\
+{\sc Check 6.} $u$がidentitiesを保存していること\\
+$x \in {\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )}$とする。次の2通りをチェックすればよい。\\
+$\bullet \hspace{3pt} x \in {\cal A}$ \\
+$u({\rm id}_{x})={\rm id}_{x}={\rm id}_{ux}$ \\
+$\bullet \hspace{3pt} x \in {\cal B}$ \\
+$u({\rm id}_{x})=T{\rm id}_{x}={\rm id}_{Tx}={\rm id}_{ux}$ \\
+よって、$u$はidentitiesを保存している。\vspace{10pt} \wsq \\
+{\sc Check 4-6}によって、$u$はfunctorであることがわかる。\vspace{10pt} \sq \\
+{\sc Proposition 3.1.2.} $v$はfunctorである。 \vspace{10pt} \\
+{\sc Check 7.} $v$のhom-functionsが正しく定義されていること\\
+$x,y \in {\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )}, f \in {\bf Hom}{\rm (}x,y{\rm )}$とする。次の4通りをチェックすればよい。\\
+$\bullet \hspace{3pt} x,y \in {\cal A}$ \\
+$f \in {\cal A}{\rm (}x,y{\rm )}$なので、$vf=Sf \in {\cal B}{\rm (}Sx,Sy{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$ \\
+$\bullet \hspace{3pt} x,y \in {\cal B}$ \\
+$f \in {\cal B}{\rm (}x,y{\rm )}$なので、$vf=f \in {\cal B}{\rm (}x,y{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$ \\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}$ \\
+$f \in {\cal B}{\rm (}Sx,y{\rm )}$なので、$vf=f \in {\cal B}{\rm (}Sx,y{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$ \\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}$ \\
+$f \in {\cal B}{\rm (}x,Sy{\rm )}$なので、$vf=f \in {\cal B}{\rm (}x,Sy{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$ \\
+よって、hom-functionsは正しく定義されている。\vspace{10pt} \wsq \\
+{\sc Check 8.} $v$がcompositionを保存していること\\
+$x,y,z \in {\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )}, f \in {\bf Hom}{\rm (}x,y{\rm )}, g \in {\bf Hom}{\rm (}y,z{\rm )}$とする。\\
+次の8通りをチェックすればよい。\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal A}, z \in {\cal A}$ \\
+$v(g \circ f) =v(g \circ_{{\cal A}} f)=S(g \circ_{{\cal A}} f) = Sg \circ_{{\cal B}} Sf$ \\
+$vg \circ_{{\cal B}} vf =Sg \circ_{{\cal A}} Sf$ \\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal A}, z \in {\cal B}$ \\
+$v(g \circ f) = v(g \circ_{{\cal B}} Sf) = g \circ_{{\cal B}} Sf$ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} Sf$ \\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}, z \in {\cal A}$ \\
+$v(g \circ f) = v(\eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x}) =S(\eta_{z}^{-1} \circ_{{\cal A}} Tg \circ_{{\cal A}} Tf \circ_{{\cal A}} \eta_{x}) = S\eta_{z}^{-1} \circ_{{\cal B}} ST(g \circ_{{\cal B}} f) \circ_{{\cal B}} S\eta_{x}$ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} f$ \\
+$\langle S,T,\eta , \epsilon \rangle$が随伴であり$\epsilon S$が自然変換であることから、$S\eta_{z}^{-1} \circ_{{\cal B}} ST(g \circ_{{\cal B}} f) \circ_{{\cal B}} S\eta_{x} = g \circ_{{\cal B}} f$なので、$v(g \circ f) = vg \circ_{{\cal B}} vf$　\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}, z \in {\cal B}$ \\
+$v(g \circ f) = v(g \circ_{{\cal B}} f) = g \circ_{{\cal B}} f$ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} f$ \\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}, z \in {\cal A}$ \\
+$v(g \circ f) = v(Sg \circ_{{\cal B}} f) = Sg \circ_{{\cal B}} f$ \\
+$vg \circ_{{\cal B}} vf = Sg \circ_{{\cal B}} f$ \\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}, z \in {\cal B}$ \\
+$v(g \circ f) = v(g \circ_{{\cal B}} f) = g \circ_{{\cal B}} f$ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} f$ \\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal B}, z \in {\cal A}$ \\
+$v(g \circ f) = v(g \circ_{{\cal B}} f) = g \circ_{{\cal B}} f$ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} f$ \\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal B}, z \in {\cal B}$ \\
+$v(g \circ f) = v(g \circ_{{\cal B}} f) = g \circ_{{\cal B}} f$ \\
+$vg \circ_{{\cal B}} vf = g \circ_{{\cal B}} f$ \\
+よって、$v$はcompositionを保存している。\vspace{10pt} \wsq \\
+{\sc Check 9.} $v$がidentitiesを保存していること\\
+$x \in {\bf Ob}{\rm (}{\cal A}\sqcup \hspace{-.76em} \mid {\cal B}{\rm )}$とする。次の2通りをチェックすればよい。\\
+$\bullet \hspace{3pt} x \in {\cal A}$ \\
+$v({\rm id}_{x})=S{\rm id}_{x}={\rm id}_{Sx}={\rm id}_{vx}$ \\
+$\bullet \hspace{3pt} x \in {\cal B}$ \\
+$v({\rm id}_{x})={\rm id}_{x}~{\rm id}_{vx}$ \\
+よって、$v$はidentitiesを保存している。\vspace{10pt} \wsq \\
+{\sc Check 7-9}によって、$v$はfunctorであることがわかる。\vspace{10pt} \sq \\
+
+  \subsection{Theorem}
+{\sc Theorem.} ${\bf Cat}$においてequivalentとspan equivalentは同値である。\vspace{10pt} \\
+{\sc Proposition 3.2.1.} $u$はsurjective on objectsかつfull and faithfulである。\\
+{\sc Proof.} surjective on objectsであることは明らかである。\\
+full and faithfulであることを示すためには、次の4通りを確認すればよい。\\
+$\bullet \hspace{3pt} x,y \in {\cal A}$\\
+${\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal A}{\rm (}x,y{\rm )} \}$であるから、
+$u: {\bf Hom}{\rm (}x,y{\rm )} \ni \langle f,x,y \rangle \mapsto f \in {\cal A}{\rm (}x,y{\rm )}={\cal A}{\rm (}ux,uy{\rm )}$はbijectiveである。\\
+$\bullet \hspace{3pt} x,y \in {\cal B}$\\
+${\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}x,y{\rm )} \}$であり、
+$\langle S,T,\eta , \epsilon \rangle$は随伴同値であるから$T$はfull and faithful、よって$T:{\cal B}{\rm (}x,y{\rm )} \rightarrow {\cal A}{\rm (}Tx,Ty{\rm )}$はbijectiveなので、$u: {\bf Hom}{\rm (}x,y{\rm )} \ni \langle f,x,y \rangle \mapsto Tf \in {\cal A}{\rm (}Tx,Ty{\rm )}={\cal A}{\rm (}ux,uy{\rm )}$はbijectiveである。\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}$\\
+${\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}Sx,y{\rm )} \}$であり、写像${\cal B}{\rm (}Sx,y{\rm )} \ni f \mapsto Tf \circ_{{\cal A}} \eta_{x} \in {\cal A}{\rm (}x,Ty{\rm )} $は随伴$\langle S,T,\eta , \epsilon \rangle$の右随伴射を与えている。右随伴射を割り当てる写像はbijectiveである。よって$u: {\bf Hom}{\rm (}x,y{\rm )} \ni \langle f,x,y \rangle \mapsto Tf \circ_{{\cal A}} \eta_{x} \in {\cal A}{\rm (}x,Ty{\rm )}={\cal A}{\rm (}ux,uy{\rm )}$はbijectiveである。\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}$\\
+${\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}x,Sy{\rm )} \}$であり、写像${\cal B}{\rm (}x,Sy{\rm )} \ni f \mapsto \eta_{y}^{-1} \circ_{{\cal A}} Tf \in {\cal A}{\rm (}Tx,y{\rm )}$は随伴$\langle T,S,\epsilon^{-1} ,\eta^{-1} \rangle$の左随伴射を与えている。左随伴射を割り当てる写像はbijectiveである。よって$u: {\bf Hom}{\rm (}x,y{\rm )} \ni \langle f,x,y \rangle \mapsto \eta_{y}^{-1} \circ_{{\cal A}} Tf \in {\cal A}{\rm (}Tx,y{\rm )}={\cal A}{\rm (}ux,uy{\rm )}$はbijectiveである。\\
+よって、$u$はsurjective on objectsかつfull and faithfulである。\vspace{10pt} \sq \\
+{\sc Proposition 3.2.2.} $v$はsurjective on objectsかつfull and faithfulである。\\
+{\sc Proof.} surjective on objectsであることは明らかである。\\
+full and faithfulであることを示すためには、次の4通りを確認すればよい。\\
+$\bullet \hspace{3pt} x,y \in {\cal A}$\\
+${\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal A}{\rm (}x,y{\rm )} \}$であり、$\langle S,T,\eta , \epsilon \rangle$は随伴同値であるから$S$はfull and faithful、よって$S:{\cal A}{\rm (}x,y{\rm )} \rightarrow {\cal B}{\rm (}Sx,Sy{\rm )}$はbijectiveなので、$v:{\bf Hom}{\rm (}x,y{\rm )} \ni \langle f,x,y \rangle \mapsto Sf \in {\cal B}{\rm (}Sx,Sy{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$はbijectiveである。\\
+$\bullet \hspace{3pt} x,y \in {\cal B}$\\
+${\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}x,y{\rm )} \}$であるから、
+$v:{\bf Hom}{\rm (}x,y{\rm )} \ni \langle f,x,y \rangle \mapsto f \in {\cal B}{\rm (}x,y{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$はbijectiveである。\\
+$\bullet \hspace{3pt} x \in {\cal A}, y \in {\cal B}$\\
+${\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}Sx,y{\rm )} \}$であるから、
+$v:{\bf Hom}{\rm (}x,y{\rm )} \ni \langle f,x,y \rangle \mapsto f \in {\cal B}{\rm (}Sx,y{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$はbijectiveである。\\
+$\bullet \hspace{3pt} x \in {\cal B}, y \in {\cal A}$\\
+${\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}{\rm (}x,Sy{\rm )} \}$であるから、
+$v:{\bf Hom}{\rm (}x,y{\rm )} \ni \langle f,x,y \rangle \mapsto f \in {\cal B}{\rm (}x,Sy{\rm )}={\cal B}{\rm (}vx,vy{\rm )}$はbijectiveである。\\
+よって、$v$はsurjective on objectsかつfull and faithfulである。\vspace{10pt} \sq \\
+{\sc Corollary 3.2.3.} eqivalentならばspan equivalentである。\\
+{\sc Proof.} ${\cal A},{\cal B} \in {\bf Cat}$とする。${\cal A}$と${\cal B}$がequivalentであるとすると、随伴同値でもある。よって、EPU${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$とprojection $u:{\cal A}\sqcup \hspace{-.76em} \mid {\cal B} \rightarrow {\cal A}, v:{\cal A}\sqcup \hspace{-.76em} \mid {\cal B} \rightarrow {\cal B}$が定義可能である。すると、{\sc Proposition 3.2.1.},{\sc Proposition 3.2.2.}により$u,v$はsurjective on objectsかつfull and faithfulであるから、${\cal A}$と${\cal B}$はspan equivalentである。\sq \\
+
+
+  \begin{thebibliography}{9}
+
+ \bibitem{}
+[Cottrell 2015] Thomas Cottrell. OPERADIC DEFINITIONS OF WEAK N-CATEGORY: COHERENCE AND COMPARISONS. Theory and Applications of Categories, Vol.30, No13, 2015, pp. 433-488.
+ \bibitem{}
+[Mac Lane 1998] Saunders Mac Lane. Categories for the working mathematician, volume 5 of Graduate Texts in Mathematics. Springer-Verlag, New York, second edition, 1998.
+ \bibitem{}
+[Leinster 2004a] Tom Leinster. Higher operads, higher categories, volume 298 of London Mathematical Society Lecture Note Series. Cambridge University Press, Cambridge, 2004.
+ 
+
+  \end{thebibliography}
+
+%  %%%% 付録
+%  \appendix
+%  \section{付録}
+\end{document}
