@@ -9,7 +9,12 @@
 
 % NOTE: packages used should be the first part of the preamble
 
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{amsfonts}
+
 \usepackage[all]{xy}
+
 % diagxy loads xy, so the line preceding is redundant
 
 \input diagxy
@@ -20,6 +25,7 @@
 
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{allcolors=[rgb]{0.1,0.1,0.4}}
+
 
 % NOTE: TAC preamble macros come next...
 
@@ -107,7 +113,35 @@
 
 \section{Span equivalence}
 
-\definition
+\begin{definition}
+Let $n \in \mathbb{N}$, An $n$-globular set is a diagram 
+\[
+\xymatrix{
+X = ( X_n \ar@<0.5ex>[r]^{s_n^X} \ar@<-0.5ex>[r]_{t_n^X} & X_{n-1} \ar@<0.5ex>[r]^{s_{n-1}^X} \ar@<-0.5ex>[r]_{t_{n-1}^X} 
+ & ... \ar@<0.5ex>[r]^{s_1^X} \ar@<-0.5ex>[r]_{t_1^X} & X_{0}  )
+ }
+\]
+of sets and maps such that
+\[
+s_{k-1}^X s_{k}^X (x) =s_{k-1}^X t_{k}^X (x) , \hspace{10pt} t_{k-1}^X s_{k}^X (x) = t_{k-1}^X t_{k}^X (x)
+\]
+for all $k \in \{ 2,...,n \} $ and $x \in X_k$. \\
+Elements of $X_k$ are called $k$-cells of $X$. And we defined hom-sets of $X$ as follows:
+\[
+{\bf Hom}(x,y) := \{ \alpha \in X_k \mid s_k^X(\alpha)=x, t_k^X(\alpha)=y \}
+\] 
+for all $k \in \{ 1,...n \} $ and $x,y \in X_{k-1}$.\\
+Let $X,Y$ be $n$-globular sets, A map of $n$-globular sets from $X$ to $Y$ is a collection $f=\{ f_{k}: X_{k} \rightarrow Y_{k} \}_{k \in \{ 1,...,n \}}$ of maps of sets such that 
+\[
+s_k^Y f_k (x) = f_{k-1} s_{k}^X (x) , \hspace{10pt} t_{k}^Y f_k (x) = f_{k-1} t_{k}^X (x)
+\]
+for all $k \in \{ 1,...,n \} $ and $x \in X_{k}$. \\
+The category of $n$-globular sets and maps is written $n \mathchar`- {\bf GSet}$.
+\end{definition}
+
+
+
+\begin{definition}
 Let $f:X \rightarrow Y$ be a map of $n$-globular sets.
 \begin{list}{$\bullet$}{}
 \item $f$:surjective on $k$-cells $ : \Leftrightarrow$ $f_k : X_k \rightarrow Y_k $ :surjective
@@ -123,14 +157,14 @@ $\left\{ \begin{array}{l}{}
 g \neq g' \Rightarrow f(g) \neq f(g')
 \end{array} \right.$
 \end{list}
-\enddefinition
+\end{definition}
 
-\definition
+\begin{definition}
 Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are span equivalent if there exists a triple $\langle \psi , u, v \rangle$ such that $\psi : KZ \rightarrow Z$ is an $K$-algebra, $u: Z \rightarrow X$ and $v: Z \rightarrow Y$ are maps of $K$-algebras, surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$-cells.The triple $\langle \psi , u, v \rangle$ is referred to as an span equivalence of $K$-algebras.
-\enddefinition
+\end{definition}
 
-\proposition
-In the pullback diagram in $[ {\bf G}_{n}^{op}, {\bf Set}]$
+\begin{proposition}
+In the pullback diagram in $n \mathchar`- {\bf GSet}$
 \[ \xymatrix{
  P \pullbackmark{1,0}{0,1} \ar[r]^j \ar[d]_i & Y \ar[d]^g \\
  X \ar[r]_f & S
@@ -140,43 +174,58 @@ In the pullback diagram in $[ {\bf G}_{n}^{op}, {\bf Set}]$
 \item $f$:full on $k$-cells $\Rightarrow$ $j$:full on $k$-cells
 \item $f$:faithful on $k$-cells $\Rightarrow$ $j$:faithful on $k$-cells
 \end{list}
-\endproposition
+\end{proposition}
 
-\pf 
+\pf We define $n$-globular set $P$ as follows:
+\[ P_k := \{ (x,y) \in X_k \times Y_k \mid f_k(x)=g_k(y) \}  \]
+\[ s_l^P := ( P_l \ni (x,y) \mapsto (s_l^X (x), s_l^Y (y) ) \in P_{l-1} ) \]
+\[ t_l^P := ( P_l \ni (x,y) \mapsto (t_l^X (x), t_l^Y (y) ) \in P_{l-1} ) \]
+for all $k \in \{ 0,...,n \}, l \in \{ 1,...,n \}$, and maps of $n$-globular sets $i,j$ as follows:
+\[
+i_k := (P_k \ni (x,y) \mapsto x \in X_k), \hspace{10pt} j_k := (P_k \ni (x,y) \mapsto y \in Y_k)
+\]
+for all $k \in \{ 0,...,n \}$. Then $(P,i,j)$ is a pullback of $X$ and $Y$ over $S$. \\
+First, let $f$ be surjective on $0$-cells. For $y \in Y_0$, there exists $x \in X_0$ such that $f_{0}(x)=g_{0}(y)$, Then $(x,y) \in P_{0}$ and $j_{0}((x,y))=y$. Therefore $j$ is surjective on $0$-cells.\\
+Second, let $f$ be full on $k$-cells. let $(x,y), (x',y') \in P_{k-1}, \phi \in {\bf Hom}(y,y')$, then $s_{k} g_{k}(\phi)=g_{k-1}(y)=f_{k-1}, t_{k} g_{k} (\phi)=g_{k-1} (y')=f_{k-1} (x')$. Thus $g_{k} (\phi) \in {\bf Hom}(f_{k-1}(x), f_{k-1}(x')$. From fullness, there exists $\psi \in {\bf Hom}(x,x')$ such that $f_k (\psi) = g_k (\phi)$. Then $(\psi , \phi ) \in {\bf Hom}((x,y),(x',y'))$ and $j_k (\psi ,\phi ) =\phi$. Therefore $j$ is full on $k$-cells. \\
+Third, let $f$ be faithful on $k$-cells. let $(x,y), (x',y') \in P_{k-1}, \psi, \phi \in {\bf Hom}((x,y), (x', y'))$ such that $j_{k}(\psi)=j_{k}(\phi)$. Then $f_k i_k(\psi)=g_k j_k (\psi)=g_k j_k (\phi)=f_k i_k(\phi)$. From faithfulness, $i_k (\psi)= i_k (\phi)$, and $\psi = (i_k (\psi ), j_k (\psi ))=(i_k (\phi ), j_k (\phi ))=\phi $. Therefore $j$ is faithful on $k$-cells.
 
-\rem
-Let $K$ be a monad on $[ {\bf G}_{n}^{op}, {\bf Set}]$. Pullbacks in $K \mathchar`- {\bf Alg}$ are created by the forgetful functor $U: K \mathchar`- {\bf Alg} \rightarrow [ {\bf G}_{n}^{op}, {\bf Set}]$.
-\endrem
+ 
 
-\proposition
+\begin{rem}
+Let $K$ be a monad on $n \mathchar`- {\bf GSet}$. Pullbacks in $K \mathchar`- {\bf Alg}$ are created by the forgetful functor $U: K \mathchar`- {\bf Alg} \rightarrow n \mathchar`- {\bf GSet}$.
+\end{rem}
+
+\begin{proposition}
 Let
 \[ \xymatrix{
- & \ar[ld] P \ar[rd] &  & & & \ar[ld] Q \ar[rd] & \\
+ & \ar[ld]_f P \ar[rd]^g &  & & & \ar[ld]_h Q \ar[rd]^i & \\
 X & & Y &  & Y & & Z 
 } \]
 be span equivalences, then
 \[ \xymatrix{ 
- & & \ar[ld] R \pullbackmark{-1,1}{1,1} \ar[rd] & & \\
- & \ar[ld] P \ar[rd] &  & \ar[ld] Q \ar[rd] & \\
+ & & \ar[ld]_p R \pullbackmark{-1,1}{1,1} \ar[rd]^q & & \\
+ & \ar[ld]_f P \ar[rd]^g &  & \ar[ld]_h Q \ar[rd]^i & \\
 X & & Y & & Z 
 } \]
 is span equivalence.
-\endproposition
+\end{proposition}
 
-\pf
+\pf  By proposition, $p,q$ are are surjective on $0$-cells, full on $k$-cells for $1 \leq k \leq n$ and faithful on $n$-cells. Therefore $f \circ p , i \circ q$ are surjective on $0$-cells, full on $k$-cells for $1 \leq k \leq n$ and faithful on $n$-cells. So the span is span equivalence.\\
 
-\thm
+\begin{thm}
 Span equivalence is equivalence relation on $K$-algebras.
-\endthm
+\end{thm}
+
+\pf It is straightforward from the definition and previous proposition that span equivalence is equivalence relation.
 
 
 \section{Characterizing equivalence of categories via spans}
 
-\definition
+\begin{definition}
 Let ${\cal A}$ and ${\cal B}$ be categories. We say that ${\cal A}$ and ${\cal B}$ are span equivalent if there exists a triple $\langle {\cal A}, u, v \rangle$ such that ${\cal C}$ is a category, $u: {\cal C} \rightarrow {\cal A}$ and $v: {\cal C} \rightarrow {\cal B}$ are functors, surjective on objects, full and faithful.
-\enddefinition
+\end{definition}
 
-\definition
+\begin{definition}
 Let ${\cal A}$ and ${\cal B}$ be categories, let $\langle S:{\cal A}\rightarrow{\cal B}, T:{\cal B} \rightarrow {\cal A}, \eta :I_{{\cal A}} \rightarrow TS , \epsilon :ST \rightarrow I_{{\cal B}} \rangle$ be an adjoint equivalence between ${\cal A}$ and ${\cal B}$. We define a category, {\rm equivalence fusion} ${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$ , as follows:
 
 \begin{list}{$\bullet$}{}
@@ -210,12 +259,12 @@ Let ${\cal A}$ and ${\cal B}$ be categories, let $\langle S:{\cal A}\rightarrow{
 \langle {\rm id}_{x},x,x \rangle & {\rm (}x \in {\cal B}, {\rm id}_{x} \in {\cal B}{\rm (}x,x{\rm )} {\rm )} \\
 \end{array} \right. \]
 \end{list}
-\enddefinition
+\end{definition}
 
 
-\proposition
+\begin{proposition}
 The equivalence fusion ${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$ forms a category.
-\endproposition
+\end{proposition}
 
 \pf
 It is easy to check that the composition $\tilde{\circ}$ is map from ${\bf Hom}(x,y) \times {\bf Hom}(y,z)$ to ${\bf Hom}(x,z)$. Now, we prove that the composition $\tilde{\circ}$ satisfies composition law and identity law by case analysis.
@@ -312,7 +361,7 @@ ${\rm id}_{y} \circ f = {\rm id}_{y} \circ_{{\cal B}} f = f$
 
 
 
-\definition
+\begin{definition}
 Let $\langle S:{\cal A}\rightarrow{\cal B}, T:{\cal B} \rightarrow {\cal A},  \eta :I_{{\cal A}} \rightarrow TS , \epsilon :ST \rightarrow I_{{\cal B}} \rangle$ be an adjoint equivalence, let ${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$ be the equivalence fusion. We define the projections $u,v$ as follows:
 
 \begin{list}{$\bullet$}{}
@@ -343,11 +392,11 @@ Sf & {\rm (}x,y \in {\cal A}{\rm )} \\
 f & {\rm ( others )} \\ 
 \end{array} \right.$ 
 \end{list}
-\enddefinition
+\end{definition}
 
-\proposition
+\begin{proposition}
 The projections $u,v$ are functors.
-\endproposition
+\end{proposition}
 
 \pf We show that $u,v$ preserve composition of morphisms and identity morphism by case analysis.
 \begin{itemize}
@@ -430,9 +479,9 @@ $v({\rm id}_{x})={\rm id}_{x}~{\rm id}_{vx}$
 
 
 
-\proposition
+\begin{proposition}
 The projections $u,v$ are surjective on objects, full and faithful.
-\endproposition
+\end{proposition}
 
 \pf It's trivial by definitions that $u,v$ are surjective on objects. So we check fullness and faithfulness.
 \begin{itemize}
@@ -463,44 +512,54 @@ $v:{\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}(x,Sy)
 \end{itemize}
 
 
-\thm
+\begin{thm}
 Let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is ordinary equivalent to ${\cal B}$ 
 if and only if ${\cal A}$ is span equivalent to ${\cal B}$. 
-\endthm
+\end{thm}
 
 \pf Let ${\cal A}$ be  ordinary equivalent to ${\cal B}$, then ${\cal A}$ is adjoint equivalent to ${\cal B}$. Thus there exists a adjoint equivalence between ${\cal A}$ and ${\cal B}$. So we can construct the equivalence fusion and the projections. By Propositions, they are span equivalence. Therefore ${\cal A}$ is span equivalent to ${\cal B}$. \\
 On the other hand, let ${\cal A}$ be span equivalent to ${\cal B}$. Then there exists a span equivalence $\langle {\cal C},u,v \rangle$ between ${\cal A}$ and ${\cal B}$, and ${\cal C}$ is ordinary equivalent to both ${\cal A}$ and ${\cal B}$. Therefore ${\cal A}$ is ordinary equivalent to ${\cal B}$.
 
-\rem
+\begin{rem}
 Let ${\cal A}$ be presheaf category. The forgetful functor
 \[
 U: {\cal A} \mathchar`- {\bf Cat} \longrightarrow {\cal A} \mathchar`- {\bf Gph}
 \]
-is monadic.
-\endrem
+is monadic. (Proposition F 1.1 in [Leinster 2004])
+\end{rem}
 
-\proposition
+Let ${\cal A}={\bf Set}$, the induced monad $T_1$ is the free strict $1$-category monad, ${\bf Set} \mathchar`- {\bf Grp}$ is the category of $1$-globular sets. Hence 
+\[
+T_1 \mathchar`- {\bf Alg} \cong {\bf Cat}
+\]
+Moreover, the category of weak $1$-category ${\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ is isomorphic to $T_1 \mathchar`- {\bf Alg}$. Therefore
+\[
+{\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat} \cong T_1 \mathchar`- {\bf Alg} \cong {\bf Cat}
+\]
+
+
+\begin{proposition}
 Let $F: {\bf Cat} \rightarrow {\bf Wk \mathchar`- 1 \mathchar`- Cat}$ be the isomorphism above. let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is span equivalent to ${\cal B}$ in ${\bf Cat}$ if and only if $F({\cal A})$ is span equivalent to $F({\cal B})$ in ${\bf Wk \mathchar`- 1 \mathchar`- Cat}$.
-\endproposition
+\end{proposition}
 
 \pf
 
-\thm 
+\begin{thm} 
 Let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is ordinary equivalent to ${\cal B}$ 
 in ${\bf Cat}$ if and only if F$({\cal A})$ is span equivalent to F$({\cal B})$ in ${\bf Wk \mathchar`- 1 \mathchar`- Cat}$. 
-\endthm
+\end{thm}
 
 
 \newpage
 
 
 
-\refs
+\begin{refs}
 
 \bibitem [Lamport, 1986]{LUG} L. Lamport, Latex User's Guide \&
 Reference Manual. Addison-Wesley (fifth edition), 1986.
 
-\endrefs
+\end{refs}
 
 
 
