@@ -528,26 +528,21 @@ U: {\cal A} \mathchar`- {\bf Cat} \longrightarrow {\cal A} \mathchar`- {\bf Gph}
 is monadic. (Proposition F 1.1 in [Leinster 2004])
 \end{rem}
 
-Let ${\cal A}={\bf Set}$, the induced monad $T_1$ is the free strict $1$-category monad, ${\bf Set} \mathchar`- {\bf Grp}$ is the category ${\bf GSet}$ of $1$-globular sets. By the remark,
+Let ${\cal A} = {\bf Set}$, we can see ${\bf Set} \mathchar`- {\bf Cat} = {\bf Cat}$, ${\bf Set} \mathchar`- {\bf Grp} = 1 \mathchar`- {\bf GSet}$. and the induced monad $T_1$ is the free strict $1$-category monad on $1 \mathchar`- {\bf GSet}$. by the remark, the comparison functor 
 \[
-T_1 \mathchar`- {\bf Alg} = {\bf GSet}^{T_1} \cong {\bf Cat}
+K: {\bf Cat} \longrightarrow  (1 \mathchar`- {\bf GSet})^{T_1}
 \]
-Moreover, the category of weak $1$-category ${\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ is isomorphic to $T_1 \mathchar`- {\bf Alg}$. Therefore
+is isomorphic and arrow part of the functor is
 \[
-{\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat} \cong T_1 \mathchar`- {\bf Alg} \cong {\bf Cat}
+K: f \longmapsto Uf .
 \]
+Moreover, the category ${\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ of Leinster's weak 1 category is the category $T_1 \mathchar`- {\bf Alg}$ of algebras for the monad.
+So the isomorphism $K: {\bf Cat} \rightarrow {\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ preserve surjectivity, fullness and faithfullness. Hence,
 
+\begin{theorem}
+Let $K: {\bf Cat} \rightarrow {\bf Wk \mathchar`- 1 \mathchar`- Cat}$ be the isomorphism above. let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is span equivalent to ${\cal B}$ in ${\bf Cat}$ if and only if $K({\cal A})$ is span equivalent to $K({\cal B})$ in ${\bf Wk \mathchar`- 1 \mathchar`- Cat}$.
+\end{theorem}
 
-\begin{proposition}
-Let $F: {\bf Cat} \rightarrow {\bf Wk \mathchar`- 1 \mathchar`- Cat}$ be the isomorphism above. let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is span equivalent to ${\cal B}$ in ${\bf Cat}$ if and only if $F({\cal A})$ is span equivalent to $F({\cal B})$ in ${\bf Wk \mathchar`- 1 \mathchar`- Cat}$.
-\end{proposition}
-
-\pf
-
-\begin{thm} 
-Let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is ordinary equivalent to ${\cal B}$ 
-in ${\bf Cat}$ if and only if F$({\cal A})$ is span equivalent to F$({\cal B})$ in ${\bf Wk \mathchar`- 1 \mathchar`- Cat}$. 
-\end{thm}
 
 
 \newpage
