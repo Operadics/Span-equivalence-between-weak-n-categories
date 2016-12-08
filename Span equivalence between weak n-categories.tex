@@ -42,11 +42,11 @@
 
 % NOTE: this is required...
 
-\copyrightyear{2015}
+\copyrightyear{2016}
 
 % NOTE: the next three are optional in this style (but are required for TAC publication)
 
-\keywords{TAC, diagrams}
+\keywords{Weak $n$-category, span equivalence}
 \amsclass{00A00}
 
 % NOTE: that \CR here provides a vertical listing
@@ -114,7 +114,7 @@
 \section{Span equivalence}
 
 \begin{definition}
-Let $n \in \mathbb{N}$, An $n$-globular set is a diagram 
+Let $n \in \mathbb{N}$. An \emph{$n$-globular set} is a diagram 
 \[
 \xymatrix{
 X = ( X_n \ar@<0.5ex>[r]^{s_n^X} \ar@<-0.5ex>[r]_{t_n^X} & X_{n-1} \ar@<0.5ex>[r]^{s_{n-1}^X} \ar@<-0.5ex>[r]_{t_{n-1}^X} 
@@ -126,17 +126,17 @@ of sets and maps such that
 s_{k-1}^X s_{k}^X (x) =s_{k-1}^X t_{k}^X (x) , \hspace{10pt} t_{k-1}^X s_{k}^X (x) = t_{k-1}^X t_{k}^X (x)
 \]
 for all $k \in \{ 2,...,n \} $ and $x \in X_k$. \\
-Elements of $X_k$ are called $k$-cells of $X$. And we defined hom-sets of $X$ as follows:
+Elements of $X_k$ are called \emph{$k$-cells} of $X$. We defined \emph{hom-sets} of $X$ as follows:
 \[
 {\bf Hom}(x,y) := \{ \alpha \in X_k \mid s_k^X(\alpha)=x, t_k^X(\alpha)=y \}
 \] 
 for all $k \in \{ 1,...n \} $ and $x,y \in X_{k-1}$.\\
-Let $X,Y$ be $n$-globular sets, A map of $n$-globular sets from $X$ to $Y$ is a collection $f=\{ f_{k}: X_{k} \rightarrow Y_{k} \}_{k \in \{ 1,...,n \}}$ of maps of sets such that 
+Let $X,Y$ be $n$-globular sets, A \emph{map} of $n$-globular sets from $X$ to $Y$ is a collection $f=\{ f_{k}: X_{k} \rightarrow Y_{k} \}_{k \in \{ 1,...,n \}}$ of maps of sets such that 
 \[
 s_k^Y f_k (x) = f_{k-1} s_{k}^X (x) , \hspace{10pt} t_{k}^Y f_k (x) = f_{k-1} t_{k}^X (x)
 \]
 for all $k \in \{ 1,...,n \} $ and $x \in X_{k}$. \\
-The category of $n$-globular sets and maps is written $n \mathchar`- {\bf GSet}$.
+The category of $n$-globular sets and their maps is denoted by $n \mathchar`- {\bf GSet}$.
 \end{definition}
 
 
@@ -144,14 +144,14 @@ The category of $n$-globular sets and maps is written $n \mathchar`- {\bf GSet}$
 \begin{definition}
 Let $f:X \rightarrow Y$ be a map of $n$-globular sets.
 \begin{list}{$\bullet$}{}
-\item $f$:surjective on $k$-cells $ : \Leftrightarrow$ $f_k : X_k \rightarrow Y_k $ :surjective
-\item $f$:injective on $k$-cells $ : \Leftrightarrow$ $f_k : X_k \rightarrow Y_k $ :injective
-\item $f$:full on $k$-cells $ : \Leftrightarrow$ 
+\item $f$ is \emph{surjective on $k$-cells} $ : \Leftrightarrow$ $f_k : X_k \rightarrow Y_k $ is surjective
+\item $f$ is \emph{injective on $k$-cells} $ : \Leftrightarrow$ $f_k : X_k \rightarrow Y_k $ is injective
+\item $f$ is \emph{full on $k$-cells} $ : \Leftrightarrow$ 
 $\left\{ \begin{array}{l} 
 \forall x, x' \in X_{k-1}, g \in {\bf Hom}_{Y}(f(x), f(x')), \\
 \exists h \in {\bf Hom}_{X}(x,x') \hspace{5pt} {\rm s.t.} \hspace{5pt} f(h)=g \\
 \end{array} \right.$
-\item $f$:faithful on $k$-cell $ : \Leftrightarrow$ 
+\item $f$ is \emph{faithful on $k$-cell} $ : \Leftrightarrow$ 
 $\left\{ \begin{array}{l}{}
 \forall x,x' \in X_{k-1}, g,g' \in {\bf Hom}_{X}(f(x),f(x')), \\
 g \neq g' \Rightarrow f(g) \neq f(g')
@@ -160,7 +160,7 @@ g \neq g' \Rightarrow f(g) \neq f(g')
 \end{definition}
 
 \begin{definition}
-Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are span equivalent if there exists a triple $\langle \psi , u, v \rangle$ such that $\psi : KZ \rightarrow Z$ is an $K$-algebra, $u: Z \rightarrow X$ and $v: Z \rightarrow Y$ are maps of $K$-algebras, surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$-cells.The triple $\langle \psi , u, v \rangle$ is referred to as an span equivalence of $K$-algebras.
+Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are \emph{span equivalent} if there exists a triple $\langle \psi , u, v \rangle$ such that $\psi : KZ \rightarrow Z$ is an $K$-algebra, $u: Z \rightarrow X$ and $v: Z \rightarrow Y$ are maps of $K$-algebras, surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$-cells. The triple $\langle \psi , u, v \rangle$ is referred to as an span equivalence of $K$-algebras.
 \end{definition}
 
 \begin{proposition}
@@ -170,13 +170,13 @@ In the pullback diagram in $n \mathchar`- {\bf GSet}$
  X \ar[r]_f & S
 } \]
 \begin{list}{$\bullet$}{}
-\item $f$:surjective on $0$-cells$\Rightarrow$ $j$:surjective on $0$-cells
-\item $f$:full on $k$-cells $\Rightarrow$ $j$:full on $k$-cells
-\item $f$:faithful on $k$-cells $\Rightarrow$ $j$:faithful on $k$-cells
+\item $f$ is surjective on $0$-cells$\Rightarrow$ $j$ is surjective on $0$-cells
+\item $f$ is full on $k$-cells $\Rightarrow$ $j$ is full on $k$-cells
+\item $f$ is faithful on $k$-cells $\Rightarrow$ $j$ is faithful on $k$-cells
 \end{list}
 \end{proposition}
 
-\pf We define $n$-globular set $P$ as follows:
+\pf We define an $n$-globular set $P$ as follows:
 \[ P_k := \{ (x,y) \in X_k \times Y_k \mid f_k(x)=g_k(y) \}  \]
 \[ s_l^P := ( P_l \ni (x,y) \mapsto (s_l^X (x), s_l^Y (y) ) \in P_{l-1} ) \]
 \[ t_l^P := ( P_l \ni (x,y) \mapsto (t_l^X (x), t_l^Y (y) ) \in P_{l-1} ) \]
@@ -184,10 +184,10 @@ for all $k \in \{ 0,...,n \}, l \in \{ 1,...,n \}$, and maps of $n$-globular set
 \[
 i_k := (P_k \ni (x,y) \mapsto x \in X_k), \hspace{10pt} j_k := (P_k \ni (x,y) \mapsto y \in Y_k)
 \]
-for all $k \in \{ 0,...,n \}$. Then $(P,i,j)$ is a pullback of $X$ and $Y$ over $S$. \\
-First, let $f$ be surjective on $0$-cells. For $y \in Y_0$, there exists $x \in X_0$ such that $f_{0}(x)=g_{0}(y)$, Then $(x,y) \in P_{0}$ and $j_{0}((x,y))=y$. Therefore $j$ is surjective on $0$-cells.\\
-Second, let $f$ be full on $k$-cells. let $(x,y), (x',y') \in P_{k-1}, \phi \in {\bf Hom}(y,y')$, then $s_{k} g_{k}(\phi)=g_{k-1}(y)=f_{k-1}, t_{k} g_{k} (\phi)=g_{k-1} (y')=f_{k-1} (x')$. Thus $g_{k} (\phi) \in {\bf Hom}(f_{k-1}(x), f_{k-1}(x')$. From fullness, there exists $\psi \in {\bf Hom}(x,x')$ such that $f_k (\psi) = g_k (\phi)$. Then $(\psi , \phi ) \in {\bf Hom}((x,y),(x',y'))$ and $j_k (\psi ,\phi ) =\phi$. Therefore $j$ is full on $k$-cells. \\
-Third, let $f$ be faithful on $k$-cells. let $(x,y), (x',y') \in P_{k-1}, \psi, \phi \in {\bf Hom}((x,y), (x', y'))$ such that $j_{k}(\psi)=j_{k}(\phi)$. Then $f_k i_k(\psi)=g_k j_k (\psi)=g_k j_k (\phi)=f_k i_k(\phi)$. From faithfulness, $i_k (\psi)= i_k (\phi)$, and $\psi = (i_k (\psi ), j_k (\psi ))=(i_k (\phi ), j_k (\phi ))=\phi $. Therefore $j$ is faithful on $k$-cells.
+for all $k \in \{ 0,...,n \}$. Then $(P,i,j)$ is a pullback of $X$ and $Y$ over $S$. It is enough to prove the proposition that we check the claims for $(P,i,j)$.
+Firstly, we prove surjectivity on $0$-cells. For $y \in Y_0$, there exists $x \in X_0$ such that $f_{0}(x)=g_{0}(y)$, So $(x,y) \in P_{0}$ and $j_{0}((x,y))=y$. which is the condition of surjectivity.
+To show fullness, we suppose $(x,y), (x',y') \in P_{k-1}, \phi \in {\bf Hom}(y,y')$, we can see $s_{k} g_{k}(\phi)=g_{k-1}(y)=f_{k-1}, t_{k} g_{k} (\phi)=g_{k-1} (y')=f_{k-1} (x')$. Thus $g_{k} (\phi) \in {\bf Hom}(f_{k-1}(x), f_{k-1}(x'))$. For fullness, there exists $\psi \in {\bf Hom}(x,x')$ such that $f_k (\psi) = g_k (\phi)$. Then $(\psi , \phi ) \in {\bf Hom}((x,y),(x',y'))$ and $j_k (\psi ,\phi ) =\phi$. Therefore $j$ is full on $k$-cells. 
+Lastly, let $f$ be faithful on $k$-cells. let $(x,y), (x',y') \in P_{k-1}, \psi, \phi \in {\bf Hom}((x,y), (x', y'))$ such that $j_{k}(\psi)=j_{k}(\phi)$. Then $f_k i_k(\psi)=g_k j_k (\psi)=g_k j_k (\phi)=f_k i_k(\phi)$. From faithfulness, $i_k (\psi)= i_k (\phi)$, and $\psi = (i_k (\psi ), j_k (\psi ))=(i_k (\phi ), j_k (\phi ))=\phi $. Therefore $j$ is faithful on $k$-cells.
 
  
 
@@ -222,7 +222,7 @@ Span equivalence is equivalence relation on $K$-algebras.
 \section{Characterizing equivalence of categories via spans}
 
 \begin{definition}
-Let ${\cal A}$ and ${\cal B}$ be categories. We say that ${\cal A}$ and ${\cal B}$ are span equivalent if there exists a triple $\langle {\cal A}, u, v \rangle$ such that ${\cal C}$ is a category, $u: {\cal C} \rightarrow {\cal A}$ and $v: {\cal C} \rightarrow {\cal B}$ are functors, surjective on objects, full and faithful.
+Let ${\cal A}$ and ${\cal B}$ be categories. We say that ${\cal A}$ and ${\cal B}$ are \emph{span equivalent} if there exists a triple $\langle {\cal A}, u, v \rangle$ such that ${\cal C}$ is a category, $u: {\cal C} \rightarrow {\cal A}$ and $v: {\cal C} \rightarrow {\cal B}$ are functors, surjective on objects, full and faithful.
 \end{definition}
 
 \begin{definition}
@@ -267,10 +267,10 @@ The equivalence fusion ${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$ forms a ca
 \end{proposition}
 
 \pf
-It is easy to check that the composition $\tilde{\circ}$ is map from ${\bf Hom}(x,y) \times {\bf Hom}(y,z)$ to ${\bf Hom}(x,z)$. Now, we prove that the composition $\tilde{\circ}$ satisfies composition law and identity law by case analysis.
+It is easy to check that the composition $\tilde{\circ}$ is map from ${\bf Hom}(x,y) \times {\bf Hom}(y,z)$ to ${\bf Hom}(x,z)$. Now, we prove that the composition $\tilde{\circ}$ satisfies associative law and identity law by case analysis.
 \begin{itemize}
 
-\item composition law
+\item associative law
  \begin{itemize}
  \item $x \in {\cal A}, y \in {\cal A}, z \in {\cal A}, w \in {\cal A}$, \\
  $h \circ ( g \circ f ) = h \circ_{{\cal A}} ( g \circ_{{\cal A}} f ) $\\
@@ -362,7 +362,7 @@ ${\rm id}_{y} \circ f = {\rm id}_{y} \circ_{{\cal B}} f = f$
 
 
 \begin{definition}
-Let $\langle S:{\cal A}\rightarrow{\cal B}, T:{\cal B} \rightarrow {\cal A},  \eta :I_{{\cal A}} \rightarrow TS , \epsilon :ST \rightarrow I_{{\cal B}} \rangle$ be an adjoint equivalence, let ${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$ be the equivalence fusion. We define the projections $u,v$ as follows:
+Let $\langle S:{\cal A}\rightarrow{\cal B}, T:{\cal B} \rightarrow {\cal A},  \eta :I_{{\cal A}} \rightarrow TS , \epsilon :ST \rightarrow I_{{\cal B}} \rangle$ be an adjoint equivalence, let ${\cal A}\sqcup \hspace{-.76em} \mid {\cal B}$ be the equivalence fusion. We define the \emph{projections} $u,v$ as follows:
 
 \begin{list}{$\bullet$}{}
 \item $u:{\cal A}\sqcup \hspace{-.76em} \mid {\cal B} \longrightarrow A$ \\
@@ -528,9 +528,9 @@ U: {\cal A} \mathchar`- {\bf Cat} \longrightarrow {\cal A} \mathchar`- {\bf Gph}
 is monadic. (Proposition F 1.1 in [Leinster 2004])
 \end{rem}
 
-Let ${\cal A}={\bf Set}$, the induced monad $T_1$ is the free strict $1$-category monad, ${\bf Set} \mathchar`- {\bf Grp}$ is the category of $1$-globular sets. Hence 
+Let ${\cal A}={\bf Set}$, the induced monad $T_1$ is the free strict $1$-category monad, ${\bf Set} \mathchar`- {\bf Grp}$ is the category ${\bf GSet}$ of $1$-globular sets. By the remark,
 \[
-T_1 \mathchar`- {\bf Alg} \cong {\bf Cat}
+T_1 \mathchar`- {\bf Alg} = {\bf GSet}^{T_1} \cong {\bf Cat}
 \]
 Moreover, the category of weak $1$-category ${\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ is isomorphic to $T_1 \mathchar`- {\bf Alg}$. Therefore
 \[
