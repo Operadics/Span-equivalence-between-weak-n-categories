@@ -111,8 +111,7 @@
 
 \section{Introduction}
 
-\section{Span equivalence}
-
+\section{Preliminary}
 \begin{definition}
 Let $n \in \mathbb{N}$. An \emph{$n$-globular set} is a diagram 
 \[
@@ -139,7 +138,54 @@ for all $k \in \{ 1,...,n \} $ and $x \in X_{k}$. \\
 The category of $n$-globular sets and their maps is denoted by $n \mathchar`- {\bf GSet}$.
 \end{definition}
 
+\begin{definition}
+A category is \emph{cartesian} if it has all pullbacks. A functor is \emph{cartesian} if it preserves pullbacks. A natural transformation is \emph{cartesian} if it all of its naturality squares are pullbacks squares. A monad is \emph{cartesian} if its functor part, unit and counit are cartesian. A map of monad is \emph{cartesian} if its underlying natural transformation is cartesian.
+\end{definition}
 
+\begin{definition}
+Let ${\cal C}$ be a cartesian category with a terminal object $1$. and $T$ be a cartesian monad on ${\cal C}$. The category of \emph{$T$-collections} is the slice category ${\cal C}/T1$. The category has a monoidal structure: let $k: K \rightarrow T1, k': K \rightarrow T1$ be collections; then their tensor product is defined to be the composite along the top of the diagram
+\[
+K
+\]
+where $!$ is the unique map $K' \rightarrow 1$. the unit for this  tensor product is the collection
+\[
+1
+\]
+The monoidal category is denoted by $T \mathchar`- {\bf Coll}$. 
+\end{definition}
+
+\begin{definition}
+Let ${\cal C}$ be a cartesian category with a terminal object $1$, and $T$ be a cartesian monad on ${\cal C}$. A \emph{$T$-operad} is a monoid  in the monoidal category $T$-${\bf Coll}$. In the case in which $T$ is the free strict $n$-category monad on $n \mathchar`- {\bf GSet}$, a $T$-operad is called an \emph{$n$-globular operad}.
+\end{definition}
+
+\begin{definition}
+Let ${\cal C}$ be a cartesian category with a terminal object $1$, $T$ be a cartesian monad on ${\cal C}$ and $K$ be a $T$-operad. Then there is an \emph{induced monad} on ${\cal C}$, which by abuse of notation we denote $(K, \eta^K, \mu^K)$: The endfunctor
+\[
+K: {\cal C} \rightarrow {\cal C}
+\]
+is defined as follows; The object part of the functor, for $X \in {\cal C}$, $KX$ is defined by the pullback:
+\[
+KX
+\]
+The arrow part of the functor, for $Y \in {\cal C}, u: X \rightarrow Y$, $Ku$ is defined by the unique property of the pullback:
+\[
+Ku
+\]
+Components  $\eta^K_X, \mu^K_X$of the unit map $\eta^K: 1 \Rightarrow K$ and $\mu^K:K^2 \Rightarrow K$ are defined by the following diagrams:
+\[
+\eta^K_X
+\]
+\[
+\mu^K_X
+\] 
+\end{definition}
+
+\begin{definition}
+Let ${\cal C}$ be a cartesian category with a terminal object $1$, $T$ be a cartesian monad on ${\cal C}$ and $K$ be a $T$-operad. We define a \emph{$K$-algebra} as an algebra for the induced monad $(K, \eta^K , \mu^K )$. Similarly, a \emph{map} of algebras for $T$-operad $K$ is a map of algebras for the induced monad. The category of $K$-algebras and thier maps is denoted by $K \mathchar`- {\bf Alg}$.
+\end{definition}
+
+
+\section{Span equivalence}
 
 \begin{definition}
 Let $f:X \rightarrow Y$ be a map of $n$-globular sets.
@@ -157,7 +203,11 @@ $\left\{ \begin{array}{l}{}
 g \neq g' \Rightarrow f(g) \neq f(g')
 \end{array} \right.$
 \end{list}
+
 \end{definition}
+%K-algの射についても同様に定義する。の文面を加える。
+%K is a monad on n-GSet. 
+%A map of K-algebras is surjective on k-cells (resp. injective on k-cells, etc) if the underlying map is surjective on k-cells (resp injective on k-cells, etc)
 
 \begin{definition}
 Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are \emph{span equivalent} if there exists a triple $\langle \psi , u, v \rangle$ such that $\psi : KZ \rightarrow Z$ is an $K$-algebra, $u: Z \rightarrow X$ and $v: Z \rightarrow Y$ are maps of $K$-algebras, surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$-cells. The triple $\langle \psi , u, v \rangle$ is referred to as an span equivalence of $K$-algebras.
