@@ -143,14 +143,16 @@ A category is \emph{cartesian} if it has all pullbacks. A functor is \emph{carte
 \end{definition}
 
 \begin{definition}
-Let ${\cal C}$ be a cartesian category with a terminal object $1$. and $T$ be a cartesian monad on ${\cal C}$. The category of \emph{$T$-collections} is the slice category ${\cal C}/T1$. The category has a monoidal structure: let $k: K \rightarrow T1, k': K \rightarrow T1$ be collections; then their tensor product is defined to be the composite along the top of the diagram
-\[
-K
-\]
+Let ${\cal C}$ be a cartesian category with a terminal object $1$. and $T$ be a cartesian monad on ${\cal C}$. The category of \emph{$T$-collections} is the slice category ${\cal C}/T1$. The category has a monoidal structure: let $k: K \rightarrow T1, k': K' \rightarrow T1$ be collections; then their tensor product is defined to be the composite along the top of the diagram
+\[ \xymatrix{
+K \otimes K' \ar[r] \ar[d] \pullbackmark{0,1.5}{1.5,0} & TK' \ar[r]^{Tk'} \ar[d]^{T!} & T^2 1 \ar[r]^{\mu^T_1} & T1 \\
+K \ar[r]_k & T1 & &
+} \]
 where $!$ is the unique map $K' \rightarrow 1$. the unit for this  tensor product is the collection
-\[
-1
-\]
+\[ \xymatrix{
+1 \ar[d]^{\mu^T_1} \\
+T1
+} \]
 The monoidal category is denoted by $T \mathchar`- {\bf Coll}$. 
 \end{definition}
 
@@ -164,20 +166,27 @@ Let ${\cal C}$ be a cartesian category with a terminal object $1$, $T$ be a cart
 K: {\cal C} \rightarrow {\cal C}
 \]
 is defined as follows; The object part of the functor, for $X \in {\cal C}$, $KX$ is defined by the pullback:
-\[
-KX
-\]
-The arrow part of the functor, for $Y \in {\cal C}, u: X \rightarrow Y$, $Ku$ is defined by the unique property of the pullback:
-\[
-Ku
-\]
-Components  $\eta^K_X, \mu^K_X$of the unit map $\eta^K: 1 \Rightarrow K$ and $\mu^K:K^2 \Rightarrow K$ are defined by the following diagrams:
-\[
-\eta^K_X
-\]
-\[
-\mu^K_X
-\] 
+\[ \xymatrix{
+KX \ar[r]^{K!} \ar[d]_{k_X} \pullbackmark{0,1.5}{1.5,0} & K \ar[d]^k \\
+TX \ar[r]_{T!} & T1
+} \]
+The arrow part of the functor, for $Y \in {\cal C}, u: X \rightarrow Y$, $Ku$ is defined by the unique property of the pullback: \vspace{5pt}
+\[ \xymatrix{
+KX \ar@{.>}[r]^{Ku} \ar[d]_{k_X} \pullbackmark{0,1.5}{1.5,0} \ar@/^25pt/[rr]^{K!} & KY \ar[r]^{K!} \ar[d]_{K_Y} \pullbackmark{0,1.5}{1.5,0} & K \ar[d]^{k} \\
+TX \ar[r]_{Tu} \ar@/_25pt/[rr]_{T!} & TY \ar[r]_{T!} & T1
+} \] \vspace{10pt} \\
+Components  $\eta^K_X, \mu^K_X$of the unit map $\eta^K: 1 \Rightarrow K$ and $\mu^K:K^2 \Rightarrow K$ are defined by the following diagrams: 
+\[ \xymatrix{
+X \ar@{.>}[rd]^{\eta^K_X} \ar[rr]^{!} \ar@/_10pt/[rdd]_{\eta^T_X} & & 1 \ar[d]^{\epsilon} \ar@/^20pt/[dd]^{\eta^T_1} \\
+& KX \ar[r]^{K!} \ar[d]_{k_X} \pullbackmark{0,1.5}{1.5,0} & K \ar[d]^k \\
+& TX \ar[r]_{T!} & T1
+} \]
+\[ \xymatrix@dr{
+K^2 X \ar[r] \ar[d] \pullbackmark{1,1}{-1,1} \ar@{.>}@/^20pt/[rrdd]^{\mu^K_X} & TKX \ar[r] \ar[d] \pullbackmark{1,1}{-1,1} & T^2 X \ar[d]^{T^2 !} \ar@/^20pt/[rdd]^{\mu^T_X} & \\
+K \otimes K \ar[r] \ar[d] \pullbackmark{1,1}{-1,1} \ar@/_70pt/[rrdd]_{\mu^K} & TK \ar[r]_{Tk} \ar[d]^{T!} & T^2 1 & \\
+K \ar[r]_k & T1 & KX \ar[r] \ar[d] \pullbackmark{1,1}{-1,1} & TX \ar[d]^{T!} \\
+& & K \ar[r]_{k} & T1 
+} \]
 \end{definition}
 
 \begin{definition}
