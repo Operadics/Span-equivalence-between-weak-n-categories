@@ -110,6 +110,19 @@
 % it must come immediately after the theorem and before any label.
 
 \section{Introduction}
+Thomas Cottrell  showed the following cohorence theorem for some weak $n$-categories.
+\begin{theorem}
+Let $K$ be an $n$-globular operad with unbiased contraction $\gamma$, and let $X$ be $n$-globular set.
+Then the free $K$-algebra on $X$ is equivalent to the free strict $n$-category on $X$.
+\end{theorem}
+The equivalence in this theorem is defined as follows:
+\begin{definition}
+Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are equivalent if there exists a map of $K$-algebras $u:X \rightarrow Y$ or $u:Y \rightarrow X$ such that $u$ is surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$.
+\end{definition}
+This equivalence is defined for the coherence theorem above and unsatisfactory equivalence for $K$-algebras (or weak $n$-categories) as he say: ``this definition of equivalence is much more strict (and thus much less general) than ought to be.'' 
+He proposed two approaches for a more general definition of equivalence of $K$-algebras. One of them is to replace the map $u$ with a span of maps of $K$-algebras. In this paper, we will see two result for one. First result, span euivalent is equivalence relation. Second result, span equivalence is generalized ordinary equivalence. \\
+In Section 2 we recall the definition of globular sets, thier maps, operads, algebras for a operad. In Section 3 we define span equivalence and prove first result. In Section 4 we define span equivalence of ordinary categories and equivalence fusion, then we prove second result.
+
 
 \section{Preliminary}
 \begin{definition}
@@ -127,7 +140,7 @@ s_{k-1}^X s_{k}^X (x) =s_{k-1}^X t_{k}^X (x) , \hspace{10pt} t_{k-1}^X s_{k}^X (
 for all $k \in \{ 2,...,n \} $ and $x \in X_k$. \\
 Elements of $X_k$ are called \emph{$k$-cells} of $X$. We defined \emph{hom-sets} of $X$ as follows:
 \[
-{\bf Hom}(x,y) := \{ \alpha \in X_k \mid s_k^X(\alpha)=x, t_k^X(\alpha)=y \}
+{\bf Hom}_{X}(x,y) := \{ \alpha \in X_k \mid s_k^X(\alpha)=x, t_k^X(\alpha)=y \}
 \] 
 for all $k \in \{ 1,...n \} $ and $x,y \in X_{k-1}$.\\
 Let $X,Y$ be $n$-globular sets, A \emph{map} of $n$-globular sets from $X$ to $Y$ is a collection $f=\{ f_{k}: X_{k} \rightarrow Y_{k} \}_{k \in \{ 1,...,n \}}$ of maps of sets such that 
@@ -212,6 +225,7 @@ $\left\{ \begin{array}{l}{}
 g \neq g' \Rightarrow f(g) \neq f(g')
 \end{array} \right.$
 \end{list}
+Let $f$ be a map of $K$-algebras. $f$ is surjective (respectively, injective, full, faithful) on $k$-cells if the underlying map is surjective (respectively, injective, full, faithful) on $k$-cells.
 
 \end{definition}
 %K-algの射についても同様に定義する。の文面を加える。
@@ -229,7 +243,7 @@ In the pullback diagram in $n \mathchar`- {\bf GSet}$
  X \ar[r]_f & S
 } \]
 \begin{list}{$\bullet$}{}
-\item $f$ is surjective on $0$-cells$\Rightarrow$ $j$ is surjective on $0$-cells
+\item $f$ is surjective on $0$-cells $\Rightarrow$ $j$ is surjective on $0$-cells
 \item $f$ is full on $k$-cells $\Rightarrow$ $j$ is full on $k$-cells
 \item $f$ is faithful on $k$-cells $\Rightarrow$ $j$ is faithful on $k$-cells
 \end{list}
