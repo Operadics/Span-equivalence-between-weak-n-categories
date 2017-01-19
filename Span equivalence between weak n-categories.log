@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.sjis) (TeX Live 2016/W32TeX) (preloaded format=platex 2016.10.24)  19 JAN 2017 13:44
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.sjis) (TeX Live 2016/W32TeX) (preloaded format=platex 2016.10.24)  19 JAN 2017 14:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -508,24 +508,24 @@ LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
 227> <xymatrix 3x2 499> <xymatrix 3x3 466> <xymatrix 4x4 908> [3] <xymatrix
 2x2 227> [4] <xymatrix 7x2 222> <xymatrix 5x3 353> [5] [6]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 347.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 348.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 349.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 350.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 349.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 350.
  [7] [8] [9] [10]
 [11] [12] [13]
-Underfull \hbox (badness 5302) in paragraph at lines 629--630
+Underfull \hbox (badness 5302) in paragraph at lines 630--631
 []\OT1/cmr/m/n/12 [Cottrell 2015] Thomas Cot-trell, OP-ERADIC DEF-I-NI-TIONS OF
  WEAK N-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 634.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 635.
 [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 634.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 635.
  (./Span equivalence between weak n-categories.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 634.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 634.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 635.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 635.
 Package rerunfilecheck Info: File `"Span equivalence between weak n-categories"
 .out' has not changed.
 (rerunfilecheck)             Checksum: 1D164106104864A4B5492E1628C22A22;229.
@@ -533,7 +533,7 @@ Package rerunfilecheck Info: File `"Span equivalence between weak n-categories"
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 634.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 635.
  ) 
 Here is how much of TeX's memory you used:
  8374 strings out of 493682
@@ -545,4 +545,4 @@ Here is how much of TeX's memory you used:
  36i,15n,30p,564b,889s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on "Span equivalence between weak n-categories.dvi" (14 pages, 1
-20892 bytes).
+21180 bytes).

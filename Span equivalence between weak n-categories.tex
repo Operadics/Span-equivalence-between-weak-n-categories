@@ -110,7 +110,7 @@
 % it must come immediately after the theorem and before any label.
 
 \section{Introduction}
-In [Cottrell 2015], Thomas Cottrell  defined an equivalence of $K$-algebra on an $n$-globular set to show the following coherence theorem:
+In [Cottrell 2015], Thomas Cottrell  defined an equivalence of $K$-algebras on an $n$-globular set to show the following coherence theorem:
 \begin{theorem}
 Let $K$ be an $n$-globular operad with unbiased contraction $\gamma$, and let $X$ be $n$-globular set.
 Then the free $K$-algebra on $X$ is equivalent to the free strict $n$-category on $X$.
@@ -207,6 +207,8 @@ K \ar[r]_k & T1 & KX \ar[r] \ar[d] \pullbackmark{1,1}{-1,1} & TX \ar[d]^{T!} \\
 Let ${\cal C}$ be a cartesian category with a terminal object $1$, $T$ be a cartesian monad on ${\cal C}$ and $K$ be a $T$-operad. We define a \emph{$K$-algebra} as an algebra for the induced monad $(K, \eta^K , \mu^K )$. Similarly, a \emph{map} of algebras for $T$-operad $K$ is a map of algebras for the induced monad. The category of $K$-algebras and thier maps is denoted by $K \mathchar`- {\bf Alg}$.
 \end{definition}
 
+Leinster's (or Batanin's) weak $n$-category is an algebra for specific operad. See section 9 and 10 in [Leinster 2004] for details.
+
 
 \section{Span equivalence}
 
@@ -229,9 +231,6 @@ g \neq g' \Rightarrow f(g) \neq f(g')
 Let $f$ be a map of $K$-algebras. $f$ is surjective (respectively, injective, full, faithful) on $k$-cells if the underlying map is surjective (respectively, injective, full, faithful) on $k$-cells.
 
 \end{definition}
-%K-algの射についても同様に定義する。の文面を加える。
-%K is a monad on n-GSet. 
-%A map of K-algebras is surjective on k-cells (resp. injective on k-cells, etc) if the underlying map is surjective on k-cells (resp injective on k-cells, etc)
 
 \begin{definition}
 Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are \emph{span equivalent} if there exists a triple $\langle \psi , u, v \rangle$ such that $\psi : KZ \rightarrow Z$ is an $K$-algebra, $u: Z \rightarrow X$ and $v: Z \rightarrow Y$ are maps of $K$-algebras, surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$-cells. The triple $\langle \psi , u, v \rangle$ is referred to as an span equivalence of $K$-algebras.
@@ -269,6 +268,8 @@ Lastly, let $f$ be faithful on $k$-cells. let $(x,y), (x',y') \in P_{k-1}, \psi,
 Let $K$ be a monad on $n \mathchar`- {\bf GSet}$. Pullbacks in $K \mathchar`- {\bf Alg}$ are created by the forgetful functor $U: K \mathchar`- {\bf Alg} \rightarrow n \mathchar`- {\bf GSet}$.
 \end{rem}
 
+By the remark, we can get similar fact in category of $K$-algebras to proposition 3.3.
+
 \begin{proposition}
 Let
 \[ \xymatrix{
@@ -284,7 +285,7 @@ X & & Y & & Z
 is span equivalence.
 \end{proposition}
 
-\pf  By proposition, $p,q$ are are surjective on $0$-cells, full on $k$-cells for $1 \leq k \leq n$ and faithful on $n$-cells. Therefore $f \circ p , i \circ q$ are surjective on $0$-cells, full on $k$-cells for $1 \leq k \leq n$ and faithful on $n$-cells. So the span is span equivalence.\\
+\pf  By the fact, $p,q$ are are surjective on $0$-cells, full on $k$-cells for $1 \leq k \leq n$ and faithful on $n$-cells. Therefore $f \circ p , i \circ q$ are surjective on $0$-cells, full on $k$-cells for $1 \leq k \leq n$ and faithful on $n$-cells. So the span is span equivalence.\\
 
 \begin{thm}
 Span equivalence is equivalence relation on $K$-algebras.
