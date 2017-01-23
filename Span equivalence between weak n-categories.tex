@@ -22,7 +22,6 @@
 \def\xypic{\hbox{\rm\Xy-pic}}
 
 % The TAC hyperref setup should be reloaded after other packages
-
 \usepackage[colorlinks=true]{hyperref}
 \hypersetup{allcolors=[rgb]{0.1,0.1,0.4}}
 
@@ -35,22 +34,23 @@
 
 \thanks{}
 
-\address{}
+\address{Division of Science (mathematics), \\
+Guraduate school, Kyoto Sango University, \\
+Kyoto 603-8555, Japan}
 
-
-\title {Span equivalence between weak $n$-categories}
+\title {Span equivalence between algebras \\ for $n$-globular operads}
 
 % NOTE: this is required...
 
-\copyrightyear{2016}
+\copyrightyear{2016-2017}
 
 % NOTE: the next three are optional in this style (but are required for TAC publication)
 
-\keywords{Weak $n$-category, span equivalence}
-\amsclass{00A00}
+\keywords{Algebras for a operad, Span equivalence, Equivalence fusion}
+\amsclass{18A22, 18C20, 18D50}
 
 % NOTE: that \CR here provides a vertical listing
-\eaddress{}
+\eaddress{i1655059@cc.kyoto-su.ac.jp}
 
 
 % NOTE: author macros  BEGIN here
@@ -90,7 +90,7 @@
 
 \maketitle
 \begin{abstract}
-
+We define a equivalence between algebras for $n$-globular operads and show that it's a generalization of ordinary equivalence.
 \end{abstract}
 
 % NOTE: it is good practice to \label all headings (and proclamations) immediately
@@ -115,7 +115,7 @@ In [Cottrell 2015], Thomas Cottrell  defined an equivalence of $K$-algebras on a
 Let $K$ be an $n$-globular operad with unbiased contraction $\gamma$, and let $X$ be $n$-globular set.
 Then the free $K$-algebra on $X$ is equivalent to the free strict $n$-category on $X$.
 \end{theorem}
-The equivalence in this theorem is defined as follows:
+His equivalence in this theorem is as follows:
 \begin{definition}
 Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are equivalent if there exists a map of $K$-algebras $u:X \rightarrow Y$ or $u:Y \rightarrow X$ such that $u$ is surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$.
 \end{definition}
@@ -207,7 +207,7 @@ K \ar[r]_k & T1 & KX \ar[r] \ar[d] \pullbackmark{1,1}{-1,1} & TX \ar[d]^{T!} \\
 Let ${\cal C}$ be a cartesian category with a terminal object $1$, $T$ be a cartesian monad on ${\cal C}$ and $K$ be a $T$-operad. We define a \emph{$K$-algebra} as an algebra for the induced monad $(K, \eta^K , \mu^K )$. Similarly, a \emph{map} of algebras for $T$-operad $K$ is a map of algebras for the induced monad. The category of $K$-algebras and thier maps is denoted by $K \mathchar`- {\bf Alg}$.
 \end{definition}
 
-Leinster's (or Batanin's) weak $n$-category is an algebra for specific operad. See section 9 and 10 in [Leinster 2004] for details.
+Leinster's weak $n$-category is an algebra for specific operad. See section 9 and 10 in [Leinster 2004] for details.
 
 
 \section{Span equivalence}
@@ -236,6 +236,8 @@ Let $f$ be a map of $K$-algebras. $f$ is surjective (respectively, injective, fu
 Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are \emph{span equivalent} if there exists a triple $\langle \psi , u, v \rangle$ such that $\psi : KZ \rightarrow Z$ is an $K$-algebra, $u: Z \rightarrow X$ and $v: Z \rightarrow Y$ are maps of $K$-algebras, surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$-cells. The triple $\langle \psi , u, v \rangle$ is referred to as an span equivalence of $K$-algebras.
 \end{definition}
 
+Trivially, under the same situation as Theorem 1.1, the free $K$-algebra on $X$ is span equivalent to the free strict $n$-category on $X$. 
+
 \begin{proposition}
 In the pullback diagram in $n \mathchar`- {\bf GSet}$
 \[ \xymatrix{
@@ -262,13 +264,11 @@ Firstly, we prove surjectivity on $0$-cells. For $y \in Y_0$, there exists $x \i
 To show fullness, we suppose $(x,y), (x',y') \in P_{k-1}, \phi \in {\bf Hom}(y,y')$, we can see $s_{k} g_{k}(\phi)=g_{k-1}(y)=f_{k-1}, t_{k} g_{k} (\phi)=g_{k-1} (y')=f_{k-1} (x')$. Thus $g_{k} (\phi) \in {\bf Hom}(f_{k-1}(x), f_{k-1}(x'))$. For fullness, there exists $\psi \in {\bf Hom}(x,x')$ such that $f_k (\psi) = g_k (\phi)$. Then $(\psi , \phi ) \in {\bf Hom}((x,y),(x',y'))$ and $j_k (\psi ,\phi ) =\phi$. Therefore $j$ is full on $k$-cells. 
 Lastly, let $f$ be faithful on $k$-cells. let $(x,y), (x',y') \in P_{k-1}, \psi, \phi \in {\bf Hom}((x,y), (x', y'))$ such that $j_{k}(\psi)=j_{k}(\phi)$. Then $f_k i_k(\psi)=g_k j_k (\psi)=g_k j_k (\phi)=f_k i_k(\phi)$. From faithfulness, $i_k (\psi)= i_k (\phi)$, and $\psi = (i_k (\psi ), j_k (\psi ))=(i_k (\phi ), j_k (\phi ))=\phi $. Therefore $j$ is faithful on $k$-cells.
 
- 
-
 \begin{rem}
-Let $K$ be a monad on $n \mathchar`- {\bf GSet}$. Pullbacks in $K \mathchar`- {\bf Alg}$ are created by the forgetful functor $U: K \mathchar`- {\bf Alg} \rightarrow n \mathchar`- {\bf GSet}$.
-\end{rem}
+Let $T$ be a monad in ${\cal C}$. Then the forgetful functor $U:T \mathchar`- {\bf Alg} \rightarrow {\cal C}$ creats limits. Hence any monadic functor reflects limits. (Theorem 3.4.2. in [TTT])
+\end{rem} 
+ By the remark, we can get similar facts in category of $K$-algebras to proposition 3.3.
 
-By the remark, we can get similar fact in category of $K$-algebras to proposition 3.3.
 
 \begin{proposition}
 Let
@@ -603,7 +603,7 @@ U: {\cal A} \mathchar`- {\bf Cat} \longrightarrow {\cal A} \mathchar`- {\bf Gph}
 is monadic. (Proposition F 1.1 in [Leinster 2004])
 \end{rem}
 
-Let ${\cal A} = {\bf Set}$, we can see ${\bf Set} \mathchar`- {\bf Cat} = {\bf Cat}$, ${\bf Set} \mathchar`- {\bf Grp} = 1 \mathchar`- {\bf GSet}$. and the induced monad $T_1$ is the free strict $1$-category monad on $1 \mathchar`- {\bf GSet}$. by the remark, the comparison functor 
+Let ${\cal A} = {\bf Set}$, we can see ${\bf Set} \mathchar`- {\bf Cat} = {\bf Cat}$, ${\bf Set} \mathchar`- {\bf Grp} = 1 \mathchar`- {\bf GSet}$, and the induced monad $T_1$ is the free strict $1$-category monad on $1 \mathchar`- {\bf GSet}$. By the remark, the comparison functor 
 \[
 K: {\bf Cat} \longrightarrow T_1 \mathchar`- {\bf Alg}
 \]
@@ -611,7 +611,7 @@ is isomorphic and arrow part of the functor is
 \[
 K: f \longmapsto Uf .
 \]
-Moreover, the category ${\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ of Leinster's weak 1 category is the category $T_1 \mathchar`- {\bf Alg}$ of algebras for the monad. (As for details,  refer to the proof of Theorem 9.1.4 in [Leinster 2004].) 
+Moreover, the category ${\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ of Leinster's weak 1 categories is the category $T_1 \mathchar`- {\bf Alg}$ of algebras for the monad. (As for details,  refer to the proof of Theorem 9.1.4 in [Leinster 2004].) 
 So the isomorphism $K: {\bf Cat} \rightarrow {\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ preserve surjectivity, fullness and faithfullness. Hence,
 
 \begin{theorem}
@@ -628,6 +628,7 @@ Let $K: {\bf Cat} \rightarrow {\bf Wk \mathchar`- 1 \mathchar`- Cat}$ be the iso
  \bibitem[Leinster 2004]{L1} [Leinster 2004] Tom Leinster, Higher operads, higher categories, volume 298 of London Math-
 ematical Society Lecture Note Series. Cambridge University Press, Cambridge, 2004.
  \bibitem[Cottrell 2015]{C1} [Cottrell 2015] Thomas Cottrell, OPERADIC DEFINITIONS OF WEAK N-CATEGORY: COHERENCE AND COMPARISONS, Theory and Applications of Categories, Vol. 30, No. 13, 2015, pp. 433-488.
+ \bibitem[TTT]{T1} [TTT] Michael Barr and Charles Wells, TOPOSES, TRIPLES AND THEORRIES. Reprint in Theory and Applications of Categories, No. 12, 2005, pp. 1-288.
 \end{refs}
 
 
