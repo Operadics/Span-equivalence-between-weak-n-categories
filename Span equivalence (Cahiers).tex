@@ -92,8 +92,7 @@ Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \righ
 But, as he said, this equivalence is not the best one: ``This definition of equivalence is much more (and thus much less general) than ought to be.'' To improve it, he suggested two approaches. The one of them is to replace the map $u$ with a span of maps of $K$-algebras. In this paper, we adopt this approach and prove two theorem. The first is that we define an adequate equivalence using spans
 and prove this is indeed an equivalence relation. The second is that our equivalence is a generalization of ordinary equivalence.
 
-In Section 2 we recall the preliminary definitions (globular sets, thier maps, operads, algebras for a operad). In Section 3 we define {\em span equivalence} and prove first theorem. In Section 4 we define span equivalence of ordinary categories and equivalence fusion, then we prove second theorem.
-
+In Section 2 we recall the preliminary definitions (globular sets, thier maps, operads, algebras for a operad). In Section 3 we define the notion of \emph{span equivalence} and prove the first theorem. In Section 4, for ordinary categories, we define span equivalence. Then we show that two categories are ordinary equivalent if and only if they are span equivalent in category of ordinary categories. To prove this, we use a combinatorial construction named \emph{equivalence fusion}. Futhermore, we show the second theorem.
 
 \section{Preliminary}
 
@@ -190,13 +189,13 @@ Let $f:X \rightarrow Y$ be a map of $n$-globular sets.
 \item $f$ is \emph{injective on $k$-cells} $ : \Leftrightarrow$ $f_k : X_k \rightarrow Y_k $ is injective
 \item $f$ is \emph{full on $k$-cells} $ : \Leftrightarrow$ 
 $\left\{ \begin{array}{l} 
-\forall x, x' \in X_{k-1}, g \in {\bf Hom}_{Y}(f(x), f(x')), \\
-\exists h \in {\bf Hom}_{X}(x,x') \hspace{5pt} {\rm s.t.} \hspace{5pt} f(h)=g \\
+\forall x, x' \in X_{k-1}, \beta \in {\bf Hom}_{Y}(f(x), f(x')), \\
+\exists \alpha \in {\bf Hom}_{X}(x,x') \hspace{5pt} {\rm s.t.} \hspace{5pt} f( \alpha )=\beta \\
 \end{array} \right.$
 \item $f$ is {\em faithful on $k$-cell} $ : \Leftrightarrow$ 
 $\left\{ \begin{array}{l}{}
-\forall x,x' \in X_{k-1}, g,g' \in {\bf Hom}_{X}(f(x),f(x')), \\
-g \neq g' \Rightarrow f(g) \neq f(g')
+\forall x,x' \in X_{k-1}, \alpha ,\alpha ' \in {\bf Hom}_{X}(f(x),f(x')), \\
+\alpha \neq \alpha ' \Rightarrow f(\alpha) \neq f(\alpha ' )
 \end{array} \right.$
 \end{list}
 Let $f$ be a map of $K$-algebras. $f$ is surjective (respectively, injective, full, faithful) on $k$-cells if the underlying map is surjective (respectively, injective, full, faithful) on $k$-cells.
