@@ -85,14 +85,16 @@ In [Cottrell 2015], Thomas Cottrell  defined an equivalence of $K$-algebras on a
 Let $K$ be an $n$-globular operad with unbiased contraction $\gamma$, and let $X$ be $n$-globular set.
 Then the free $K$-algebra on $X$ is equivalent to the free strict $n$-category on $X$.
 \end{theorem}
+\noindent
 His equivalence in this theorem is as follows:
 \begin{definition}
 Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are equivalent if there exists a map of $K$-algebras $u:X \rightarrow Y$ or $u:Y \rightarrow X$ such that $u$ is surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$.
 \end{definition}
+\noindent
 But, as he said, this equivalence is not the best one: ``This definition of equivalence is much more (and thus much less general) than ought to be.'' To improve it, he suggested two approaches. The one of them is to replace the map $u$ with a span of maps of $K$-algebras. In this paper, we adopt this approach and prove two theorem. The first is that we define an adequate equivalence using spans
 and prove this is indeed an equivalence relation. The second is that our equivalence is a generalization of ordinary equivalence between categories.
 
-In Section 2 we recall the preliminary definitions (globular sets, thier maps, operads, algebras for a operad). In Section 3 we define the notion of \emph{span equivalence} and prove the first theorem. In Section 4, for ordinary categories, we define span equivalence. Then we show that two categories are ordinary equivalent if and only if they are span equivalent in category of ordinary categories. To prove this, we use a combinatorial construction named \emph{equivalence fusion}. Futhermore, we show the second theorem.
+In Section 2 we recall the preliminary definitions (globular sets, thier maps, operads, algebras for a operad). In Section 3 we define the notion of \emph{span equivalence in $K \mathchar`- {\bf Alg}$} and prove the first theorem. In Section 4, for ordinary categories, we define \emph{span equivalence in ${\bf Cat}$} independently. Then we show that two categories are ordinary equivalent if and only if they are span equivalent in ${\bf Cat}$. To prove this, we use a combinatorial construction named \emph{equivalence fusion}. Futhermore, we show the second theorem.
 
 \section{Preliminary}
 The contents of the section is in [Cottrell 2015].
@@ -135,7 +137,7 @@ K \ar[r]_k & T1 & &
 } \]
 where $!$ is the unique map $K' \rightarrow 1$. the unit for this  tensor product is the collection
 \[ \xymatrix{
-1 \ar[d]^{\mu^T_1} \\
+1 \ar[d]^{\eta^T_1} \\
 T1
 } \]
 The monoidal category is denoted by $T \mathchar`- {\bf Coll}$. 
@@ -177,7 +179,7 @@ K \ar[r]_k & T1 & KX \ar[r] \ar[d] \pullbackmark{1,1}{-1,1} & TX \ar[d]^{T!} \\
 \begin{definition}
 Let ${\cal C}$ be a cartesian category with a terminal object $1$, $T$ be a cartesian monad on ${\cal C}$ and $K$ be a $T$-operad. We define a \emph{$K$-algebra} as an algebra for the induced monad $(K, \eta^K , \mu^K )$. Similarly, a \emph{map} of algebras for $T$-operad $K$ is a map of algebras for the induced monad. The category of $K$-algebras and thier maps is denoted by $K \mathchar`- {\bf Alg}$.
 \end{definition}
-
+\noindent
 Leinster's weak $n$-category is an algebra for specific operad. See section 9 and 10 in [Leinster 2004] for details.
 
 
@@ -199,13 +201,13 @@ $\left\{ \begin{array}{l}{}
 \alpha \neq \alpha ' \Rightarrow f_{k}(\alpha) \neq f_{k}(\alpha ' )
 \end{array} \right.$
 \end{list}
-Let $f$ be a map of $K$-algebras. $f$ is surjective (respectively, injective, full, faithful) on $k$-cells if the underlying map is surjective (respectively, injective, full, faithful) on $k$-cells.
+Let $f$ be a map of $K$-algebras. $f$ is \emph{surjective} (respectively, \emph{injective}, \emph{full}, \emph{faithful}) on $k$-cells if and only if the underlying map is surjective (respectively, injective, full, faithful) on $k$-cells.
 \end{definition}
 
 \begin{definition}
-Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are {\em span equivalent} if there exists a triple $\langle \psi , u, v \rangle$ such that $\psi : KZ \rightarrow Z$ is an $K$-algebra, $u: Z \rightarrow X$ and $v: Z \rightarrow Y$ are maps of $K$-algebras, surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$-cells. The triple $\langle \psi , u, v \rangle$ is referred to as an span equivalence of $K$-algebras.
+Let $K$ be an $n$-globular operad. $K$-algebras $KX \rightarrow X$ and $KY \rightarrow Y$ are {\em span equivalent in $K \mathchar`- {\bf Alg}$} if there exists a triple $\langle \psi , u, v \rangle$ such that $\psi : KZ \rightarrow Z$ is an $K$-algebra, $u: Z \rightarrow X$ and $v: Z \rightarrow Y$ are maps of $K$-algebras, surjective on $0$-cells, full on $m$-cells for all $1 \leq m \leq n$, and faithful on $n$-cells. The triple $\langle \psi , u, v \rangle$ is referred to as an span equivalence of $K$-algebras.
 \end{definition}
-
+\noindent
 Trivially, under the same situation as Theorem 1.1, the free $K$-algebra on $X$ is span equivalent to the free strict $n$-category on $X$. 
 
 \begin{proposition}
@@ -232,17 +234,18 @@ i_k := (P_k \ni (x,y) \mapsto x \in X_k), \hspace{10pt} j_k := (P_k \ni (x,y) \m
 for all $k \in \{ 0,...,n \}$. Then $(P,i,j)$ is a pullback of $X$ and $Y$ over $S$. It is enough to prove the proposition that we check the claims for $(P,i,j)$.
 Firstly, we prove surjectivity on $0$-cells. For $y \in Y_0$, there exists $x \in X_0$ such that $f_{0}(x)=g_{0}(y)$, So $(x,y) \in P_{0}$ and $j_{0}((x,y))=y$. which is the condition of surjectivity.
 To show fullness, we suppose $(x,y), (x',y') \in P_{k-1}, \phi \in {\bf Hom}(y,y')$, we can see $s_{k} g_{k}(\phi)=g_{k-1}(y)=f_{k-1}, t_{k} g_{k} (\phi)=g_{k-1} (y')=f_{k-1} (x')$. Thus $g_{k} (\phi) \in {\bf Hom}(f_{k-1}(x), f_{k-1}(x'))$. For fullness, there exists $\psi \in {\bf Hom}(x,x')$ such that $f_k (\psi) = g_k (\phi)$. Then $(\psi , \phi ) \in {\bf Hom}((x,y),(x',y'))$ and $j_k (\psi ,\phi ) =\phi$. Therefore $j$ is full on $k$-cells. 
-Lastly, let $f$ be faithful on $k$-cells. let $(x,y), (x',y') \in P_{k-1}, \psi, \phi \in {\bf Hom}((x,y), (x', y'))$ such that $j_{k}(\psi)=j_{k}(\phi)$. Then $f_k i_k(\psi)=g_k j_k (\psi)=g_k j_k (\phi)=f_k i_k(\phi)$. From faithfulness, $i_k (\psi)= i_k (\phi)$, and $\psi = (i_k (\psi ), j_k (\psi ))=(i_k (\phi ), j_k (\phi ))=\phi $. Therefore $j$ is faithful on $k$-cells.
+Lastly, let $f$ be faithful on $k$-cells. let $(x,y), (x',y') \in P_{k-1}$, $ \psi, \phi \in {\bf Hom}((x,y), (x', y'))$ such that $j_{k}(\psi)=j_{k}(\phi)$. Then $f_k i_k(\psi)=g_k j_k (\psi)=g_k j_k (\phi)=f_k i_k(\phi)$. From faithfulness, $i_k (\psi)= i_k (\phi)$, and $\psi = (i_k (\psi ), j_k (\psi ))=(i_k (\phi ), j_k (\phi ))=\phi $. Therefore $j$ is faithful on $k$-cells.
 \end{proof}
 
+By the following remark, on category of $K$-algebras, we can get similar facts to proposition 3.3.
+
 \begin{remark}
-Let $T$ be a monad in ${\cal C}$. Then the forgetful functor $U:T \mathchar`- {\bf Alg} \rightarrow {\cal C}$ creats limits. Hence any monadic functor reflects limits. (Theorem 3.4.2. in [TTT])
+Let $T$ be a monad in ${\cal C}$. Then the forgetful functor $U:K \mathchar`- {\bf Alg} \rightarrow {\cal C}$ creats limits. Hence any monadic functor reflects limits. (Theorem 3.4.2. in [TTT])
 \end{remark} 
- By the remark, we can get similar facts in category of $K$-algebras to proposition 3.3.
 
 
 \begin{proposition}
-Let
+In $K \mathchar`- {\bf Alg}$. Let
 \[ \xymatrix{
  & \ar[ld]_f P \ar[rd]^g &  & & & \ar[ld]_h Q \ar[rd]^i & \\
 X & & Y &  & Y & & Z 
@@ -269,7 +272,7 @@ Span equivalence is equivalence relation on $K$-algebras.
 \section{Characterizing equivalence of categories via spans}
 
 \begin{definition}
-Let ${\cal A}$ and ${\cal B}$ be categories. We say that ${\cal A}$ and ${\cal B}$ are \emph{span equivalent} if there exists a triple $\langle {\cal A}, u, v \rangle$ such that ${\cal C}$ is a category, $u: {\cal C} \rightarrow {\cal A}$ and $v: {\cal C} \rightarrow {\cal B}$ are functors, surjective on objects, full and faithful.
+Let ${\cal A}$ and ${\cal B}$ be categories. We say that ${\cal A}$ and ${\cal B}$ are \emph{span equivalent in {\bf Cat}} if there exists a triple $\langle {\cal A}, u, v \rangle$ such that ${\cal C}$ is a category, $u: {\cal C} \rightarrow {\cal A}$ and $v: {\cal C} \rightarrow {\cal B}$ are functors, surjective on objects, full and faithful.
 \end{definition}
 
 \begin{definition}
@@ -559,11 +562,11 @@ $v:{\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}(x,Sy)
 
 \begin{theorem}
 Let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is ordinary equivalent to ${\cal B}$ 
-if and only if ${\cal A}$ is span equivalent to ${\cal B}$. 
+if and only if ${\cal A}$ is span equivalent to ${\cal B}$ in ${\bf Cat}$. 
 \end{theorem}
 
-\begin{proof} Let ${\cal A}$ be  ordinary equivalent to ${\cal B}$, then ${\cal A}$ is adjoint equivalent to ${\cal B}$. Thus there exists a adjoint equivalence between ${\cal A}$ and ${\cal B}$. So we can construct the equivalence fusion and the projections. By Propositions, they are span equivalence. Therefore ${\cal A}$ is span equivalent to ${\cal B}$. \\
-On the other hand, let ${\cal A}$ be span equivalent to ${\cal B}$. Then there exists a span equivalence $\langle {\cal C},u,v \rangle$ between ${\cal A}$ and ${\cal B}$, and ${\cal C}$ is ordinary equivalent to both ${\cal A}$ and ${\cal B}$. Therefore ${\cal A}$ is ordinary equivalent to ${\cal B}$.
+\begin{proof} Let ${\cal A}$ be  ordinary equivalent to ${\cal B}$, then ${\cal A}$ is adjoint equivalent to ${\cal B}$. Thus there exists a adjoint equivalence between ${\cal A}$ and ${\cal B}$. So we can construct the equivalence fusion and the projections. By Propositions, they are span equivalence in ${\bf Cat}$. Therefore ${\cal A}$ is span equivalent to ${\cal B}$. \\
+On the other hand, let ${\cal A}$ be span equivalent to ${\cal B}$ in ${\bf Cat}$. Then there exists a span equivalence $\langle {\cal C},u,v \rangle$ between ${\cal A}$ and ${\cal B}$, and ${\cal C}$ is ordinary equivalent to both ${\cal A}$ and ${\cal B}$. Therefore ${\cal A}$ is ordinary equivalent to ${\cal B}$.
 \end{proof}
 
 \begin{remark}

@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.sjis) (TeX Live 2016/W32TeX) (preloaded format=platex 2016.10.24)  13 FEB 2017 12:59
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.sjis) (TeX Live 2016/W32TeX) (preloaded format=platex 2016.10.24)  13 FEB 2017 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -315,37 +315,38 @@ LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
 [2]
 
 LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
-(Font)              using `JT1/gt/m/n' instead on input line 95.
+(Font)              using `JT1/gt/m/n' instead on input line 97.
 
 
 LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
-(Font)              using `JY1/gt/m/n' instead on input line 95.
+(Font)              using `JY1/gt/m/n' instead on input line 97.
 
 <xymatrix 4x1 270> [3] <xymatrix 4x2 311> <xymatrix 1x2 51> <xymatrix 2x2 227>
 [4] <xymatrix 3x2 499> <xymatrix 3x3 466> <xymatrix 4x4 908> [5]
-Overfull \hbox (23.86896pt too wide) in paragraph at lines 191--196
+Overfull \hbox (23.86896pt too wide) in paragraph at lines 193--198
 []$\OML/cmm/m/it/12 f$ \OT1/ptm/m/it/12 is \OT1/ptm/m/n/12 full on $\OML/cmm/m/
 it/12 k$\OT1/ptm/m/n/12 -cells $\OT1/cmr/m/n/12 :\OMS/cmsy/m/n/12 ,$ $[]$ 
  []
 
 
-Overfull \hbox (54.41154pt too wide) in paragraph at lines 196--201
+Overfull \hbox (54.41154pt too wide) in paragraph at lines 198--203
 []$\OML/cmm/m/it/12 f$ \OT1/ptm/m/it/12 is \OT1/ptm/m/n/12 faith-ful on $\OML/c
 mm/m/it/12 k$\OT1/ptm/m/n/12 -cell $\OT1/cmr/m/n/12 :\OMS/cmsy/m/n/12 ,$ $[]$ 
  []
 
 [6] <xymatrix 2x2 227>
-Overfull \hbox (59.58095pt too wide) in paragraph at lines 231--236
+Overfull \hbox (59.74115pt too wide) in paragraph at lines 233--238
 \OT1/ptm/m/n/12 Lastly, let $\OML/cmm/m/it/12 f$ \OT1/ptm/m/n/12 be faith-ful o
 n $\OML/cmm/m/it/12 k$\OT1/ptm/m/n/12 -cells. let $\OT1/cmr/m/n/12 (\OML/cmm/m/
 it/12 x; y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12
- x[]; y[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 P[];  ; ^^^ \OMS
-/cmsy/m/n/12 2 []\OT1/cmr/m/n/12 ((\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )\OML/c
-mm/m/it/12 ; \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 ))$
+ x[]; y[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 P[]$\OT1/ptm/m/n
+/12 , $\OML/cmm/m/it/12  ; ^^^ \OMS/cmsy/m/n/12 2 []\OT1/cmr/m/n/12 ((\OML/cmm/
+m/it/12 x; y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 x[]; y[]\OT1/cmr/m/n/12 ))$
  []
 
 
-Overfull \hbox (3.67094pt too wide) in paragraph at lines 231--236
+Overfull \hbox (3.67094pt too wide) in paragraph at lines 233--238
 \OT1/ptm/m/n/12 From faith-ful-ness, $\OML/cmm/m/it/12 i[]\OT1/cmr/m/n/12 (\OML
 /cmm/m/it/12  \OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 i[]\OT1/cmr/m/n/12 (\OML/cmm
 /m/it/12 ^^^\OT1/cmr/m/n/12 )$\OT1/ptm/m/n/12 , and $\OML/cmm/m/it/12   \OT1/cm
@@ -357,34 +358,34 @@ r/m/n/12 = (\OML/cmm/m/it/12 i[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12  \OT1/cmr/m/n
  []
 
 [7]
-Overfull \hbox (5.10663pt too wide) in paragraph at lines 239--240
+Overfull \hbox (7.44621pt too wide) in paragraph at lines 243--244
 \OT1/ptm/b/n/12 Remark 3.4. \OT1/ptm/m/n/12 Let $\OML/cmm/m/it/12 T$ \OT1/ptm/m
 /n/12 be a monad in $\OMS/cmsy/m/n/12 C$\OT1/ptm/m/n/12 . Then the for-get-ful 
-func-tor $\OML/cmm/m/it/12 U \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 T\OT1/cmr/m/n/1
+func-tor $\OML/cmm/m/it/12 U \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 K\OT1/cmr/m/n/1
 2 -[] \OMS/cmsy/m/n/12 !
  []
 
 <xymatrix 7x2 222> <xymatrix 5x3 353> [8]
-Overfull \hbox (8.23038pt too wide) detected at line 292
+Overfull \hbox (8.23038pt too wide) detected at line 295
 []
  []
 
 [9]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 320.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 323.
 
  (c:/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 320.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 323.
  [10] [11] [12]
-Overfull \hbox (29.48357pt too wide) in paragraph at lines 412--426
+Overfull \hbox (29.48357pt too wide) in paragraph at lines 415--429
 []  $\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 f; x; y\OMS/cmsy/m/n/12 i 7[][]! \OML/c
 mm/m/it/12 uf \OT1/cmr/m/n/12 := []$ 
  []
 
 [13] [14]
-Overfull \hbox (11.84868pt too wide) in paragraph at lines 536--538
+Overfull \hbox (11.84868pt too wide) in paragraph at lines 539--541
 []$\OML/cmm/m/it/12 T \OT1/cmr/m/n/12 : \OMS/cmsy/m/n/12 B[]\OML/cmm/m/it/12 x;
  y[] \OMS/cmsy/m/n/12 ! A[]\OML/cmm/m/it/12 Tx; Ty[]$ \OT1/ptm/m/n/12 is bi-jec
 -tive. There-fore $\OML/cmm/m/it/12 u \OT1/cmr/m/n/12 : [][]\OML/cmm/m/it/12 x;
@@ -392,7 +393,7 @@ Overfull \hbox (11.84868pt too wide) in paragraph at lines 536--538
  []
 
 
-Overfull \hbox (9.50122pt too wide) in paragraph at lines 536--538
+Overfull \hbox (9.50122pt too wide) in paragraph at lines 539--541
 \OMS/cmsy/m/n/12 fh\OML/cmm/m/it/12 f; x; y\OMS/cmsy/m/n/12 i j \OML/cmm/m/it/1
 2 f \OMS/cmsy/m/n/12 2 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )
 \OMS/cmsy/m/n/12 g 3 h\OML/cmm/m/it/12 f; x; y\OMS/cmsy/m/n/12 i 7! \OML/cmm/m/
@@ -401,7 +402,7 @@ it/12 f \OMS/cmsy/m/n/12 2 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/
  []
 
 [15]
-Overfull \hbox (0.60686pt too wide) in paragraph at lines 538--540
+Overfull \hbox (0.60686pt too wide) in paragraph at lines 541--543
 \OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Sx; y\
 OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g 3 h\OML/cmm/m/it/12 f; x; y\OMS/cmsy/m/n/12 
 i 7! \OML/cmm/m/it/12 Tf \OMS/cmsy/m/n/12 ^^N[] \OML/cmm/m/it/12 ^^Q[] \OMS/cms
@@ -410,7 +411,7 @@ ML/cmm/m/it/12 ux; uy[]$
  []
 
 
-Overfull \hbox (9.49109pt too wide) in paragraph at lines 546--548
+Overfull \hbox (9.49109pt too wide) in paragraph at lines 549--551
 []$\OML/cmm/m/it/12 S \OT1/cmr/m/n/12 : \OMS/cmsy/m/n/12 A[]\OML/cmm/m/it/12 x;
  y[] \OMS/cmsy/m/n/12 ! B[]\OML/cmm/m/it/12 Sx; Sy[]$ \OT1/ptm/m/n/12 is bi-jec
 -tive. There-fore $\OML/cmm/m/it/12 v \OT1/cmr/m/n/12 : [][]\OML/cmm/m/it/12 x;
@@ -425,10 +426,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  3715 strings out of 493682
  45455 string characters out of 6152629
- 305805 words of memory out of 5000000
+ 304805 words of memory out of 5000000
  7231 multiletter control sequences out of 15000+600000
  27522 words of font info for 110 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 30i,13n,31p,578b,880s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,13n,31p,623b,880s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on "Span equivalence (Cahiers).dvi" (18 pages, 107428 bytes).
+Output written on "Span equivalence (Cahiers).dvi" (18 pages, 107616 bytes).
