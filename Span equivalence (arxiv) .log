@@ -1,0 +1,404 @@
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.sjis) (TeX Live 2016/W32TeX) (preloaded format=platex 2016.10.24)  16 FEB 2017 17:24
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**"./Span equivalence (arxiv) .tex"
+(./Span equivalence (arxiv) .tex
+pLaTeX2e <2016/09/08> (based on LaTeX2e <2016/03/31> patch level 3)
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(c:/texlive/2016/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(c:/texlive/2016/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count82
+\c@section=\count83
+\c@subsection=\count84
+\c@subsubsection=\count85
+\c@paragraph=\count86
+\c@subparagraph=\count87
+\c@figure=\count88
+\c@table=\count89
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen118
+)
+(c:/texlive/2016/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(c:/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(c:/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(c:/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+(c:/texlive/2016/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(c:/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count90
+\Gm@cntv=\count91
+\c@Gm@tempcnt=\count92
+\Gm@bindingoffset=\dimen119
+\Gm@wd@mp=\dimen120
+\Gm@odd@mp=\dimen121
+\Gm@even@mp=\dimen122
+\Gm@layoutwidth=\dimen123
+\Gm@layoutheight=\dimen124
+\Gm@layouthoffset=\dimen125
+\Gm@layoutvoffset=\dimen126
+\Gm@dimlist=\toks16
+)
+(c:/texlive/2016/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box41
+\beforetitleunit=\skip43
+\aftertitleunit=\skip44
+\ttl@plus=\dimen127
+\ttl@minus=\dimen128
+\ttl@toksa=\toks17
+\titlewidth=\dimen129
+\titlewidthlast=\dimen130
+\titlewidthfirst=\dimen131
+)
+(c:/texlive/2016/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks18
+\thm@bodyfont=\toks19
+\thm@headfont=\toks20
+\thm@notefont=\toks21
+\thm@headpunct=\toks22
+\thm@preskip=\skip45
+\thm@postskip=\skip46
+\thm@headsep=\skip47
+\dth@everypar=\toks23
+)
+\c@theorem=\count93
+
+(c:/texlive/2016/texmf-dist/tex/generic/xypic/xy.sty
+(c:/texlive/2016/texmf-dist/tex/generic/xypic/xy.tex Bootstrap'ing: catcodes,
+docmode, (c:/texlive/2016/texmf-dist/tex/generic/xypic/xyrecat.tex)
+(c:/texlive/2016/texmf-dist/tex/generic/xypic/xyidioms.tex)
+
+ Xy-pic version 3.8.9 <2013/10/06>
+ Copyright (c) 1991-2013 by Kristoffer H. Rose <krisrose@tug.org> and others
+ Xy-pic is free software: see the User's Guide for details.
+
+Loading kernel: messages; fonts; allocations: state,
+\X@c=\dimen132
+\Y@c=\dimen133
+\U@c=\dimen134
+\D@c=\dimen135
+\L@c=\dimen136
+\R@c=\dimen137
+\Edge@c=\toks24
+\X@p=\dimen138
+\Y@p=\dimen139
+\U@p=\dimen140
+\D@p=\dimen141
+\L@p=\dimen142
+\R@p=\dimen143
+\Edge@p=\toks25
+\X@origin=\dimen144
+\Y@origin=\dimen145
+\X@xbase=\dimen146
+\Y@xbase=\dimen147
+\X@ybase=\dimen148
+\Y@ybase=\dimen149
+\X@min=\dimen150
+\Y@min=\dimen151
+\X@max=\dimen152
+\Y@max=\dimen153
+\lastobjectbox@=\box42
+\zerodotbox@=\box43
+\almostz@=\dimen154
+ direction,
+\d@X=\dimen155
+\d@Y=\dimen156
+\K@=\count94
+\KK@=\count95
+\Direction=\count96
+\K@dXdY=\dimen157
+\K@dYdX=\dimen158
+\xyread@=\read1
+\xywrite@=\write3
+\csp@=\count97
+\quotPTK@=\dimen159
+
+utility macros; pictures: \xy, positions,
+\swaptoks@@=\toks26
+\connectobjectbox@@=\box44
+ objects,
+\styletoks@=\toks27
+ decorations;
+kernel objects: directionals, circles, text; options; algorithms: directions,
+edges, connections;  Xy-pic loaded)
+Package: xy 2013/10/06 Xy-pic version 3.8.9
+
+(c:/texlive/2016/texmf-dist/tex/generic/xypic/xycmtip.tex
+ Xy-pic option: Computer Modern tip extension v.3.7
+(c:/texlive/2016/texmf-dist/tex/generic/xypic/xytips.tex
+ Xy-pic option: More Tips extension v.3.11 loaded) loaded)
+(c:/texlive/2016/texmf-dist/tex/generic/xypic/xymatrix.tex
+ Xy-pic option: Matrix feature v.3.14
+\Row=\count98
+\Col=\count99
+\queue@=\toks28
+\queue@@=\toks29
+\qcount@=\count100
+\qcount@@=\count101
+\matrixsize@=\count102
+ loaded)
+(c:/texlive/2016/texmf-dist/tex/generic/xypic/xyarrow.tex
+ Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
+(c:/texlive/2016/texmf-dist/tex/generic/xypic/xycurve.tex
+ Xy-pic option: Curve and Spline extension v.3.12 curve,
+\crv@cnt@=\count103
+\crvpts@=\toks30
+\splinebox@=\box45
+\splineval@=\dimen160
+\splinedepth@=\dimen161
+\splinetol@=\dimen162
+\splinelength@=\dimen163
+ circles,
+\L@=\dimen164
+ loaded))
+(c:/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks31
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/texlive/2016/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+(c:/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(c:/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: dvips.def on input line 99.
+
+(c:/texlive/2016/texmf-dist/tex/latex/graphics-def/dvips.def
+File: dvips.def 2016/07/10 v3.1a Driver-dependent file (DPC,SPQR)
+))
+\Gin@req@height=\dimen165
+\Gin@req@width=\dimen166
+)
+(./Span equivalence (arxiv) .aux)
+\openout1 = `"Span equivalence (arxiv) .aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+ (I search kanjifont definition file: . . )
+(I search font definition file: . . . . . . . )
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 57.
+
+(c:/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: dvips
+*geometry* verbose mode - [ preamble ] result:
+* driver: dvips
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* hratio: 1:1
+* vratio: 1:1
+* modes: 
+* h-part:(L,W,R)=(116.6563pt, 364.19527pt, 116.65631pt)
+* v-part:(T,H,B)=(159.33543pt, 526.37598pt, 159.33543pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=364.19527pt
+* \textheight=526.37598pt
+* \oddsidemargin=44.3863pt
+* \evensidemargin=44.3863pt
+* \topmargin=50.06544pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 61.
+(c:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 61.
+
+(c:/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 61.
+
+(c:/texlive/2016/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10.95> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 69.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10.95> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 69.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 76.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 76.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 76.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 76.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 76.
+
+
+LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 78.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 78.
+
+[1
+
+]
+
+LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
+(Font)              using `JT1/gt/m/n' instead on input line 91.
+
+
+LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
+(Font)              using `JY1/gt/m/n' instead on input line 91.
+
+<xymatrix 4x1 270> [2] <xymatrix 4x2 311> <xymatrix 1x2 51> <xymatrix 2x2 227>
+[3] <xymatrix 3x2 499> <xymatrix 3x3 466> <xymatrix 4x4 908> [4]
+Overfull \hbox (23.86896pt too wide) in paragraph at lines 187--192
+[]$\OML/cmm/m/it/12 f$ \OT1/ptm/m/it/12 is \OT1/ptm/m/n/12 full on $\OML/cmm/m/
+it/12 k$\OT1/ptm/m/n/12 -cells $\OT1/cmr/m/n/12 :\OMS/cmsy/m/n/12 ,$ $[]$ 
+ []
+
+
+Overfull \hbox (54.41154pt too wide) in paragraph at lines 192--197
+[]$\OML/cmm/m/it/12 f$ \OT1/ptm/m/it/12 is \OT1/ptm/m/n/12 faith-ful on $\OML/c
+mm/m/it/12 k$\OT1/ptm/m/n/12 -cell $\OT1/cmr/m/n/12 :\OMS/cmsy/m/n/12 ,$ $[]$ 
+ []
+
+[5] <xymatrix 2x2 227> [6] <xymatrix 7x2 222> <xymatrix 5x3 353> [7]
+Overfull \hbox (8.23038pt too wide) detected at line 290
+[]
+ []
+
+[8]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 318.
+
+ (c:/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 318.
+ [9] [10] [11]
+Overfull \hbox (29.48357pt too wide) in paragraph at lines 410--424
+[]  $\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 f; x; y\OMS/cmsy/m/n/12 i 7[][]! \OML/c
+mm/m/it/12 uf \OT1/cmr/m/n/12 := []$ 
+ []
+
+[12] [13] [14]
+Overfull \hbox (11.84868pt too wide) in paragraph at lines 534--536
+[]$\OML/cmm/m/it/12 T \OT1/cmr/m/n/12 : \OMS/cmsy/m/n/12 B[]\OML/cmm/m/it/12 x;
+ y[] \OMS/cmsy/m/n/12 ! A[]\OML/cmm/m/it/12 Tx; Ty[]$ \OT1/ptm/m/n/12 is bi-jec
+-tive. There-fore $\OML/cmm/m/it/12 u \OT1/cmr/m/n/12 : [][]\OML/cmm/m/it/12 x;
+ y[] \OT1/cmr/m/n/12 =
+ []
+
+
+Overfull \hbox (9.50122pt too wide) in paragraph at lines 534--536
+\OMS/cmsy/m/n/12 fh\OML/cmm/m/it/12 f; x; y\OMS/cmsy/m/n/12 i j \OML/cmm/m/it/1
+2 f \OMS/cmsy/m/n/12 2 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )
+\OMS/cmsy/m/n/12 g 3 h\OML/cmm/m/it/12 f; x; y\OMS/cmsy/m/n/12 i 7! \OML/cmm/m/
+it/12 f \OMS/cmsy/m/n/12 2 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/
+12 ) \OMS/cmsy/m/n/12 3 h\OML/cmm/m/it/12 f; x; y\OMS/cmsy/m/n/12 i 7!
+ []
+
+
+Overfull \hbox (0.60686pt too wide) in paragraph at lines 536--538
+\OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 2 B\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Sx; y\
+OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g 3 h\OML/cmm/m/it/12 f; x; y\OMS/cmsy/m/n/12 
+i 7! \OML/cmm/m/it/12 Tf \OMS/cmsy/m/n/12 ^^N[] \OML/cmm/m/it/12 ^^Q[] \OMS/cms
+y/m/n/12 2 A[]\OML/cmm/m/it/12 x; Ty[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 A[]\O
+ML/cmm/m/it/12 ux; uy[]$
+ []
+
+
+Overfull \hbox (9.49109pt too wide) in paragraph at lines 544--546
+[]$\OML/cmm/m/it/12 S \OT1/cmr/m/n/12 : \OMS/cmsy/m/n/12 A[]\OML/cmm/m/it/12 x;
+ y[] \OMS/cmsy/m/n/12 ! B[]\OML/cmm/m/it/12 Sx; Sy[]$ \OT1/ptm/m/n/12 is bi-jec
+-tive. There-fore $\OML/cmm/m/it/12 v \OT1/cmr/m/n/12 : [][]\OML/cmm/m/it/12 x;
+ y[] \OT1/cmr/m/n/12 =
+ []
+
+[15] [16] [17] (./Span equivalence (arxiv) .aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3713 strings out of 493682
+ 45430 string characters out of 6152629
+ 305805 words of memory out of 5000000
+ 7229 multiletter control sequences out of 15000+600000
+ 27522 words of font info for 110 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 30i,13n,31p,622b,880s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on "Span equivalence (arxiv) .dvi" (17 pages, 107980 bytes).
