@@ -237,7 +237,7 @@ To show fullness, we suppose $(x,y), (x',y') \in P_{k-1}, \phi \in {\bf Hom}(y,y
 Lastly, we suppose that $f$ is faithful on $k$-cells. let $(x,y), (x',y') \in P_{k-1}$ and $ \psi, \phi \in {\bf Hom}((x,y), (x', y'))$ such that $j_{k}(\psi)=j_{k}(\phi)$. Then $f_k i_k(\psi)=g_k j_k (\psi)=g_k j_k (\phi)=f_k i_k(\phi)$. From faithfulness, $i_k (\psi)= i_k (\phi)$, and $\psi = (i_k (\psi ), j_k (\psi ))=(i_k (\phi ), j_k (\phi ))=\phi $. Therefore $j$ is faithful on $k$-cells.
 \end{proof}
 
-By the following remark, on the category of $K$-algebras, we can get similar facts to proposition 3.3.
+By the following remark, for the category of $K$-algebras, we can also get similar results of proposition 3.3.
 
 \begin{remark}
 Let $T$ be a monad on ${\cal C}$. Then the forgetful functor $U:K \mathchar`- {\bf Alg} \rightarrow {\cal C}$ creats limits. Hence any monadic functor reflects limits. (Theorem 3.4.2. in [TTT])
@@ -270,6 +270,7 @@ Span equivalence is equivalence relation on $K$-algebras.
 
 
 \section{Characterizing equivalence of categories via spans}
+In this section, we define span equivalence in ${\bf Cat}$ which is independent of that in $K \mathchar`- {\bf Alg}$. Then we show that two categories are ordinary equivalent if and only if they are span equivalent in {\bf Cat} and that span equivalence of categories implies span equivalence of algebras of them. Consequently, span equivalence is a generalization of ordinary equivalence.
 
 \begin{definition}
 Let ${\cal A}$ and ${\cal B}$ be categories. We say that ${\cal A}$ and ${\cal B}$ are \emph{span equivalent in {\bf Cat}} if there exists a triple $\langle {\cal A}, u, v \rangle$ such that ${\cal C}$ is a category, $u: {\cal C} \rightarrow {\cal A}$ and $v: {\cal C} \rightarrow {\cal B}$ are functors, surjective on objects, full and faithful.
@@ -561,12 +562,12 @@ $v:{\bf Hom}{\rm (}x,y{\rm )}=\{ \langle f,x,y \rangle \mid f \in {\cal B}(x,Sy)
 
 
 \begin{theorem}
-Let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is ordinary equivalent to ${\cal B}$ 
+Let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is equivalent to ${\cal B}$ 
 if and only if ${\cal A}$ is span equivalent to ${\cal B}$ in ${\bf Cat}$. 
 \end{theorem}
 
-\begin{proof} Let ${\cal A}$ be  ordinary equivalent to ${\cal B}$, then ${\cal A}$ is adjoint equivalent to ${\cal B}$. Thus there exists a adjoint equivalence between ${\cal A}$ and ${\cal B}$. So we can construct the equivalence fusion and the projections. By Propositions, they are span equivalence in ${\bf Cat}$. Therefore ${\cal A}$ is span equivalent to ${\cal B}$. \\
-On the other hand, let ${\cal A}$ be span equivalent to ${\cal B}$ in ${\bf Cat}$. Then there exists a span equivalence $\langle {\cal C},u,v \rangle$ between ${\cal A}$ and ${\cal B}$, and ${\cal C}$ is ordinary equivalent to both ${\cal A}$ and ${\cal B}$. Therefore ${\cal A}$ is ordinary equivalent to ${\cal B}$.
+\begin{proof} Let ${\cal A}$ be equivalent to ${\cal B}$, then ${\cal A}$ is adjoint equivalent to ${\cal B}$. Thus there exists a adjoint equivalence between ${\cal A}$ and ${\cal B}$. So we can construct the equivalence fusion and the projections. By Propositions, they are span equivalence in ${\bf Cat}$. Therefore ${\cal A}$ is span equivalent to ${\cal B}$. \\
+On the other hand, let ${\cal A}$ be span equivalent to ${\cal B}$ in ${\bf Cat}$. Then there exists a span equivalence $\langle {\cal C},u,v \rangle$ between ${\cal A}$ and ${\cal B}$, and ${\cal C}$ is equivalent to both ${\cal A}$ and ${\cal B}$. Therefore ${\cal A}$ is equivalent to ${\cal B}$.
 \end{proof}
 
 \begin{remark}
@@ -576,20 +577,27 @@ U: {\cal A} \mathchar`- {\bf Cat} \longrightarrow {\cal A} \mathchar`- {\bf Gph}
 \]
 is monadic. (Proposition F 1.1 in [Leinster 2004])
 \end{remark}
-
+\noindent
 Let ${\cal A} = {\bf Set}$, we can see ${\bf Set} \mathchar`- {\bf Cat} = {\bf Cat}$, ${\bf Set} \mathchar`- {\bf Grp} = 1 \mathchar`- {\bf GSet}$, and the induced monad $T_1$ is the free strict $1$-category monad on $1 \mathchar`- {\bf GSet}$. By the remark, the comparison functor 
 \[
-K: {\bf Cat} \longrightarrow T_1 \mathchar`- {\bf Alg}
+N: {\bf Cat} \longrightarrow T_1 \mathchar`- {\bf Alg}
 \]
 is isomorphic and arrow part of the functor is
 \[
-K: f \longmapsto Uf .
+N: f \longmapsto Uf .
 \]
-Moreover, the category ${\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ of Leinster's weak 1 categories is the category $T_1 \mathchar`- {\bf Alg}$ of algebras for the monad. (As for details,  refer to the proof of Theorem 9.1.4 in [Leinster 2004].) 
-So the isomorphism $K: {\bf Cat} \rightarrow {\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ preserve surjectivity, fullness and faithfullness. Hence,
+Moreover, the category ${\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ of Leinster's weak 1 categories is the category $T_1 \mathchar`- {\bf Alg}$ of algebras for the monad for details,  refer to the proof of Theorem 9.1.4 in [Leinster 2004].
+So the isomorphism $N: {\bf Cat} \rightarrow {\bf Wk} \mathchar`- 1 \mathchar`- {\bf Cat}$ preserve surjectivity, fullness and faithfullness. Hence,
+
+\begin{proposition}
+Let $N: {\bf Cat} \rightarrow {\bf Wk \mathchar`- 1 \mathchar`- Cat}$ be the isomorphism above. let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is span equivalent to ${\cal B}$ in ${\bf Cat}$ if and only if $N({\cal A})$ is span equivalent to $N({\cal B})$ in ${\bf Wk \mathchar`- 1 \mathchar`- Cat}$.
+\end{proposition}
+
+\noindent
+As a result of Proposition 4.7. and Proposition 4.9.
 
 \begin{theorem}
-Let $K: {\bf Cat} \rightarrow {\bf Wk \mathchar`- 1 \mathchar`- Cat}$ be the isomorphism above. let ${\cal A}$ and ${\cal B}$ be categories. ${\cal A}$ is span equivalent to ${\cal B}$ in ${\bf Cat}$ if and only if $K({\cal A})$ is span equivalent to $K({\cal B})$ in ${\bf Wk \mathchar`- 1 \mathchar`- Cat}$.
+${\cal A}$ is equivalent to ${\cal B}$ if and only if $N({\cal A})$ is span equivalent to $N({\cal B})$ in ${\bf Wk \mathchar`- 1 \mathchar`- Cat}$.
 \end{theorem}
 
 
@@ -607,7 +615,7 @@ ematical Society Lecture Note Series. Cambridge University Press, Cambridge, 200
 \vspace{5mm}
 \noindent
 Division of Science (mathematics), \\
-Guraduate school, Kyoto Sango University, \\
+Graduate School, Kyoto Sango University, \\
 Kyoto 603-8555, Japan \\
 E-mail: i1655059@cc.kyoto-su.ac.jp
 
